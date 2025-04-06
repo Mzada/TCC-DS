@@ -115,6 +115,7 @@ footer{
     justify-content: center; 
 }
 
+/*Bloco login página inicial*/
 .login-container {
     display: flex;
     justify-content: flex-end;
@@ -218,3 +219,57 @@ footer{
 .btn-cadastro:hover {
     background-color: darkred;
 }
+/*Style bloco login página inicial*/
+
+
+/* Style tela decadastro*/
+.main-cadastro {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: space-around;
+    padding: 20px;
+    height: 750px;
+    }
+
+.btn-cadastrar{
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 15px 15px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+}
+
+.btn-cadastrar:hover {
+    background-color: darkred;
+}
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 750px;
+    width: 50%;
+}
+
+.card-cadastro {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+}
+
+
+
+/* Style tela decadastro*/

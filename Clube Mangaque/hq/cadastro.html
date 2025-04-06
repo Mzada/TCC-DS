@@ -19,33 +19,46 @@
     <div>
         <button class="btn_voltar">Voltar</button>
     </div>
-    <main>
+    <main class="main-cadastro">
         <div class="cadastro-container">
             <div class="card-cadastro">
                 <h1>Cadastre-se</h1>
                 <div class="textfield">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" name="usuario" placeholder="Digite seu nome e sobrenome">
+                    <input type="text" name="usuario" placeholder="Digite seu nome e sobrenome" required>
                 </div>
                 <div class="textfield">
                     <label for="apelido">Apelido/Nome Social</label>
-                    <input type="text" name="usuario" placeholder="Como deseja ser chamado?">
+                    <input type="text" name="usuario" placeholder="Como deseja ser chamado?" required>
                 </div>
                 <div class="textfield">
                     <label for="email">E-mail</label>
-                    <input type="text" name="email" placeholder="Digite seu e-mail">
+                    <input type="text" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="textfield">
+                    <label for="data-nascimento">Data de Nascimento</label>
+                    <input type="date" name="data-nascimento" required>
                 </div>
                 <div class="textfield">
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha">
+                    <input type="password" name="senha" placeholder="Senha" required>
                 </div>
                 <div class="textfield">
                     <label for="confirmar-senha">Confirmar Senha</label>
-                    <input type="password" name="confirmar-senha" placeholder="Confirme sua senha">
+                    <input type="password" name="confirmar-senha" placeholder="Confirme sua senha" required>
                 </div>
                
-                <button class="btn-cadastrar">Cadastrar</button>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
             </div>
         </div>
     </main>
+
+    <footer>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
+
 </body>
+</html>
