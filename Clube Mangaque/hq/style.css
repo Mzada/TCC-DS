@@ -223,6 +223,7 @@ footer{
 
 
 /* Style tela decadastro*/
+
 .main-cadastro {
     display: flex;
     flex-direction: row;
@@ -230,7 +231,26 @@ footer{
     justify-content: space-around;
     padding: 20px;
     height: 750px;
-    }
+}
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 750px;
+    width: 50%;
+}
+
+.card-cadastro {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    height: 95%;
+}
+
 
 .btn-cadastrar{
     text-align: center;
@@ -253,23 +273,10 @@ footer{
     background-color: darkred;
 }
 
-.cadastro-container {
+.form-cadastro {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 750px;
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between
 }
-
-.card-cadastro {
-    background: #222;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 450px;
-}
-
-
-
-/* Style tela decadastro*/
+/* Style tela de cadastro*/
