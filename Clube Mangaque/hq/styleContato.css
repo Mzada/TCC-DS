@@ -173,6 +173,8 @@ footer{
     outline: none;
     border-color: darkred;
     box-shadow: 0 0 0 3px darkred;
+    border-color: darkred;
+    box-shadow: 0 0 0 3px darkred;
 }
 
 .form button {
