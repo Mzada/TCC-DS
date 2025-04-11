@@ -16,39 +16,37 @@
             </div>
         </nav>
     </header>
+
     <div>
         <button class="btn_voltar">Voltar</button>
     </div>
-    <main class="main-cadastro">
+
+    <main>
         <div class="cadastro-container">
             <div class="card-cadastro">
                 <h1>Cadastre-se</h1>
-                    <form class="formCadastro" action="processaCadastro.php" method="POST">
-                    
+                <form>
                     <div class="textfield">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" name="nomeCompleto" placeholder="Digite seu nome e sobrenome" required>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome e sobrenome">
                     </div>
                     <div class="textfield">
                         <label for="apelido">Apelido/Nome Social</label>
-                        <input type="text" name="apelido" placeholder="Como deseja ser chamado?">
+                        <input type="text" id="apelido" name="apelido" placeholder="Como deseja ser chamado?">
                     </div>
                     <div class="textfield">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="textfield">
-                        <label for="dataNascimento">Data de Nascimento</label>
-                        <input type="date" name="dataNascimento" required>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Senha" required>
+                        <input type="password" id="senha" name="senha" placeholder="Senha">
                     </div>
                     <div class="textfield">
-                        <label for="confirmarSenha">Confirmar Senha</label>
-                        <input type="password" name="confirmarSenha" placeholder="Confirme sua senha" required>
+                        <label for="confirmar-senha">Confirmar Senha</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha">
                     </div>
+
                     <button type="submit" class="btn-cadastrar">Cadastrar</button>
                 </form>
             </div>
@@ -56,11 +54,7 @@
     </main>
 
     <footer>
-        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+        <p>© 2024 Clube Mangaquê</p>
     </footer>
-    <script>
-        document.getElementById("ano").textContent = new Date().getFullYear();
-    </script>
-
 </body>
 </html>
