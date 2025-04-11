@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados da Busca - Clube Mangaquê</title>
+  <link rel="stylesheet" href="style-resultados.css">
+
+  <style>
+    body {
+      background-color: #181818;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .resultado {
+      background: #202020;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+    .resultado img {
+      max-width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Resultados da Busca</h2>
+  <div id="resultados"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const termo = params.get("q").toLowerCase();
+
+    const hqs = [
+      { titulo: "Crise Nas Infinitas Terras", imagem: "./images/crise.png", link: "hqs.html" },
+      { titulo: "Homem Aranha E DeadPool", imagem: "./images/aranha.png", link: "hqs.html" },
+      { titulo: "Xmen 97", imagem: "./images/xmen97.png", link: "hqs.html" },
+      { titulo: "Agatha Harkness The Salem Saga", imagem: "./images/agatha.png", link: "hqs.html" },
+      { titulo: "Scarlet Witch #1", imagem: "./images/wanda.png", link: "hqs.html" },
+      { titulo: "Batman Wayne Family Adventures #1", imagem: "./images/wayne.png", link: "hqs.html" },
+      { titulo: "Loki Agente de Asgard", imagem: "./images/loki.png", link: "hqs.html" },
+      { titulo: "Alvorecer dos Titans", imagem: "./images/titans.png", link: "hqs.html" },
+      { titulo: "Harley Quinn The Eat, Bang, Kill Tour", imagem: "./images/arle.png", link: "hqs.html" },
+      { titulo: "Vox Machina Origins", imagem: "./images/cr.png", link: "hqs.html" }
+    ];
+
+    const comics = [
+      { titulo: "Superman e Homem Aranha", imagem: "./images/superaranha.png", link: "comics.html" },
+      { titulo: "Crise Nas Infinitas Terras", imagem: "./images/crise.png", link: "comics.html" }
+    ];
+
+    const mangas = [
+  { titulo: "Jujutsu Kaisen", imagem: "./images/juju.png", link: "mangas.html" },
+  { titulo: "Demon Slayer", imagem: "./images/demon.png", link: "mangas.html" },
+  { titulo: "Super Onze", imagem: "./images/onze.png", link: "mangas.html" },
+  { titulo: "Solo Leveling", imagem: "./images/solo.png", link: "mangas.html" },
+  { titulo: "Given", imagem: "./images/given.png", link: "mangas.html" },
+  { titulo: "Blue Lock", imagem: "./images/blue.png", link: "mangas.html" },
+  { titulo: "One Piece", imagem: "./images/one.png", link: "mangas.html" },
+  { titulo: "Pokemon", imagem: "./images/po.png", link: "mangas.html" },
+  { titulo: "Dungeon Meshi", imagem: "./images/dungeon.png", link: "mangas.html" },
+  { titulo: "Ataque Dos Titãs", imagem: "./images/aot.png", link: "mangas.html" }
+];
+
+
+    const resultados = [...hqs, ...mangas].filter(item =>
+  item.titulo.toLowerCase().includes(termo)
+);
+
+
+    const container = document.getElementById("resultados");
+
+    if (resultados.length === 0) {
+      container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    } else {
+      resultados.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "resultado";
+        div.innerHTML = `
+          <a href="${item.link}">
+            <h3>${item.titulo}</h3>
+            <img src="${item.imagem}" alt="${item.titulo}">
+          </a>
+        `;
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
