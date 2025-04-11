@@ -108,10 +108,7 @@
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
                 </ul>
-                <form action="resultados.html" method="get" onsubmit="return validarBusca(this)">
-                    <input type="text" name="q" class="search-box" placeholder="Buscar...">
-                  </form>
-                  
+                <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
     </header>
@@ -274,9 +271,12 @@
         }
     </script>
 
-     <footer>
-        <p> 2024 Clube Mangaquê. Todos os direitos reservados.</p>
+    <footer>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
     
 </body>
 

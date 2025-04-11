@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <header>
@@ -23,4 +24,68 @@
                 <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center; /* Alinha horizontalmente */
+                align-items: center; /* Alinha verticalmente */
+                height: 16vh; /* Altura da viewport */
+                text-align: justify;
+            }
+        </style>
     </header>
+
+    <div style="text-align: center; color: white;">
+        <p><h2>Sobre</h2></p>
+            <br>
+        <div class="container">
+            <p> <font size="4">Na sociedade contemporânea, o movimento geek e a tecnologia caminham lado a lado. Com a popularização da internet, os sites tornaram-se ferramentas essenciais para que as pessoas registrem seus gostos e hobbies, além de preservarem informações por longos períodos. Criar uma plataforma que una esses dois pilares, frequentemente buscados como forma de entretenimento, permite não apenas o registro de conteúdos, mas também a interação entre usuários interessados no universo geek.</font></p>
+            <p></p>
+        </div>
+    </div>
+
+    <div style="text-align: center; color: white;">
+        <br>
+        <p><h2>Equipe de Desenvolvimento</h2></p>
+
+        <div class="w3-padding-64 w3-content">
+            <h2 class="w3-text-white">Membros</h2>
+            <hr style="width:950px" class="w3-opacity">
+        
+            <div class="w3-content w3-display-container w3-center">
+                
+                    <img class="slides" src="imgmembros/Mat.png" style="width:20%" >
+                    <img class="slides" src="imgmembros/vic.png" style="width:20%">
+                    <img class="slides" src="imgmembros/bianca.png" style="width:13%">
+                    <img class="slides" src="imgmembros/wes.png" style="width:20%">
+                    <img class="slides" src="imgmembros/joice.png" style="width:15%">
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+                function plusDivs(n) {
+                showDivs(slideIndex += n);
+                }
+                function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("slides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+                }
+                </script>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+        </body>
+        
+        </html>
+        
+        
+        

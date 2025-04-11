@@ -20,15 +20,12 @@
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
                 </ul>
-                <form action="resultados.html" method="get">
-                    <input type="text" name="q" class="search-box" placeholder="Buscar...">
-                  </form>
-                  
+                <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="main-cadastro">
         <aside>
             <h2><span>BEM VINDO</span></h2>
             <h2>AO CLUBE MANGAQUÊ!</h2>
@@ -60,16 +57,5 @@
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
-   <script>
-    function validarBusca(form) {
-      const valor = form.q.value.trim();
-      if (!valor) {
-        alert("Digite algo para buscar.");
-        return false;
-      }
-      return true;
-    }
-  </script>
-  
 </body>
 </html>
