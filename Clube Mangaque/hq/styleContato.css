@@ -171,16 +171,14 @@ footer{
 .form textarea:hover,
 .form textarea:focus {
     outline: none;
-    border-color: darkred;
-    box-shadow: 0 0 0 3px darkred;
-    border-color: darkred;
-    box-shadow: 0 0 0 3px darkred;
+    border-color: #09d;
+    box-shadow: 0 0 0 3px #4dc8ff;
 }
 
 .form button {
     display: block;
     padding: 1rem;
-    background: red;
+    background: #0072c4;
     color: #fff;
     font: inherit;
     text-transform: uppercase;
@@ -192,6 +190,6 @@ footer{
 .form button:hover,
 .form button:focus {
     outline: none;
-    background: darkred;
+    background: #09d;
     
 }
