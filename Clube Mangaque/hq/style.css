@@ -63,7 +63,10 @@ span{
 
 }
 
-
+h2 span {
+    text-transform: uppercase;
+    
+}
 
 p{
     line-height: 20px;
@@ -280,3 +283,19 @@ footer{
     justify-content: space-between
 }
 /* Style tela de cadastro*/
+
+.texto-sobre {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: justify;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/*Manter essa parte para que o 'sobre' siga o padrao do style. ASS: Vitoria*/
+body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: white !important;
+}
