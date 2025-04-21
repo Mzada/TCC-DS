@@ -58,9 +58,29 @@
     <footer>
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+
+    <!--Atualiza o ano automaticamente-->
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
 
+    <!--Apresentação das mensagens de erro-->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const sucesso = urlParams.get('sucesso');
+
+        if(erro == 'idade'){
+            alert('Você deve ter pelo menos 16 anos para se cadastrar!');
+        }else if(erro == 'senhas'){
+            alert('As senhas não coincidem!');
+        }else if(erro == 'email'){
+            alert('Este e-mail já  está cadastrado.');
+        }else if(erro == 'bd'){
+            alert('Erro ao cadastrar. Tente novamente mais tarde');
+        }else if(sucesso == '1'){
+            alert('Cadastro realizado com sucesso!');
+        }
+    </script>
 </body>
 </html>
