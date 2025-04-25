@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box; 
+}
+
+/* Divisão das colunas */
+.perfil-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr; 
+    gap: 2rem; 
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.perfil-info, .obras-lidas-section, .lista-mangas {
+    background: #222;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.perfil-info {
+    grid-column: 1 / 2;
+    max-width: 100%; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.obras-lidas-section {
+    grid-column: 2 / 3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-mangas {
+    grid-column: 3 / 4;
+    overflow: hidden;
+}
+
+.perfil-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Perfil do usuário */
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.dados-usuario {
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1rem; 
+}
+
+.dados-usuario h2 {
+    font-size: 18px; 
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dados-usuario p {
+    font-size: 14px;
+    color: white;
+}
+
+.btn-editar-perfil {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 0, 0, 0.816);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-editar {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.form-editar input,
+.form-editar button {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+
+.form-editar button {
+    display: inline;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(34, 61, 170, 0.629); 
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* Obras lidas */
+.obras-lidas-section h2 {
+    font-size: 25px; 
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.obras-lidas-section {
+    margin-top: 0;
+    color: white;
+}
+
+.lista-obras {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 600px; /* Defina a altura máxima para a lista */
+    overflow-y: auto;  /* Habilita a rolagem vertical */
+}
+
+/* Personalização da barra de rolagem */
+.lista-obras::-webkit-scrollbar {
+    width: 8px;  /* Largura da barra de rolagem */
+}
+
+.lista-obras::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do polegar */
+    border-radius: 10px; /* Arredondamento do polegar */
+}
+
+.lista-obras::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor do polegar ao passar o mouse */
+}
+
+.lista-obras::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Cor da trilha */
+    border-radius: 10px; /* Arredondamento da trilha */
+}
+
+.obra-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #1c1c1c;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    gap: 15px;
+}
+
+.info-obra {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 2rem; 
+}
+
+.ano-publicacao {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #bbb;
+    margin-left: 0.5rem;
+}
+
+.obra-card h3 {
+    margin: 0;
+    color: white;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.obra-card p {
+    margin: 0;
+    color: #bbb;
+}
+
+.capa-manga {
+    width: 20%;
+    height: 140px; 
+    object-fit: cover; 
+    border-radius: 5px;
+    filter: grayscale(100%); /* Imagem em preto e branco por padrão */
+    transition: filter 0.3s ease; /* Suaviza a transição */
+}
+
+.obra-card:hover .capa-manga {
+    filter: grayscale(0%); /* Imagem colorida no hover */
+}
+
+.btn-remover {
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Empurra o botão para baixo */
+}
+
+.btn-remover:hover {
+    background-color: #e74c3c;
+}
+
+.lista-obras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card-obra {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.card-obra h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.card-obra p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+/* Minhas avaliações */
+.form-manga input,
+.form-manga button {
+    margin: 0.5rem 0;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+
+.form-manga button {
+    display: inline;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 0, 0, 0.816); 
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-adicionar {
+    display: inline;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: black; 
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.lista-mangas h2 {
+    font-size: 25px; 
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tabela-mangas {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tabela-mangas th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.tabela-mangas th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.tabela-mangas tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+.tabela-mangas tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+.tabela-mangas th,
+.tabela-mangas td {
+    border: 1px solid #444;
+    padding: 0.75rem;
+    text-align: center;
+    color: white;
+}
+
+.tabela-mangas th {
+    background-color: #111;
+}
+
+.btn-editar,
+.btn-excluir {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 0 2px;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-excluir {
+    background-color: #6a6969cb;
+}
+
+
