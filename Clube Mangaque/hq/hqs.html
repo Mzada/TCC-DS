@@ -111,11 +111,6 @@
         </nav>
     </header>
     <div style="text-align: center; color: white;">
-
-
- <!--essa parte de reviews com estrela vai sair assim que o banco de dados começar a ser feito e criar outro CSS, ficando só a capa-->
- <!--Lembrar que cada HQ e mangá deverá abrir em pagina nova que nem no letterboxd-->
-
         <h2>HQ'S</h2>
         <font size="4">Deixe sua review e ajude outros leitores a saber o que você achou!</font>
     </div>
@@ -124,7 +119,6 @@
         <div class="hq" data-index="0">
             <img src="./images/crise.png" alt="Crise Nas Infinitas Terras" class="poster">
             <font size="3"><span style="color: white;">Crise Nas Infinitas Terras</span></font>
-
             <div class="review">
                 <div class="rating" onclick="rate(0, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -152,7 +146,7 @@
             <img src="./images/xmen97.png" alt="Xmen 97" class="poster">
             <font size="3"><span style="color: white;">Xmen 97</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(2, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -165,7 +159,7 @@
             <img src="./images/agatha.png" alt="Agatha Harkness The Salem Saga" class="poster">
             <font size="3"><span style="color: white;">Agatha Harkness The Salem Saga</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(3, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -178,7 +172,7 @@
             <img src="./images/wanda.png" alt="Scarlet Witch #1" class="poster">
             <font size="3"><span style="color: white;">Scarlet Witch #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(4, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -191,7 +185,7 @@
             <img src="./images/wayne.png" alt="Batman Wayne Family Adventures #1" class="poster">
             <font size="3"><span style="color: white;">Batman Wayne Family Adventures #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(5, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -204,7 +198,7 @@
             <img src="./images/loki.png" alt="Loki Agente de Asgard" class="poster">
             <font size="3"><span style="color: white;">Loki Agente de Asgard</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(6, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -217,7 +211,7 @@
             <img src="./images/titans.png" alt="Alvorecer dos Titans" class="poster">
             <font size="3"><span style="color: white;">Alvorecer dos Titans</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(7, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -230,7 +224,7 @@
             <img src="./images/arle.png" alt="Harley Quinn The Eat, Bang, Kill Tour #1" class="poster">
             <font size="3"><span style="color: white;">Harley Quinn The Eat, Bang, Kill Tour</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(8, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -243,7 +237,7 @@
             <img src="./images/cr.png" alt="Vox Machina Origins" class="poster">
             <font size="3"><span style="color: white;">Vox Machina Origins</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(9, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
@@ -276,7 +270,7 @@
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
-     <script>
+    <script>
         document.querySelector(".search-box").addEventListener("keypress", function(e) {
             if (e.key === "Enter") {
                 const termo = this.value.trim();
@@ -286,8 +280,7 @@
             }
         });
     </script>
-    
-      
+
 </body>
 
 </html>
