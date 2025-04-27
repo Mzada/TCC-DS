@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@ body {
     background-color: black;
     color: white;
 }
-
 
 .top-bar {
     display: flex;
@@ -18,18 +16,17 @@ body {
 
 .header-image {
     width: 100%; 
-    height: auto; /*vamos tentar deixar um valor fixo aqui, achei que ela está muito grande. Ass: Bianca*/
+    height: auto;
     display: block;
 }
+
 img {
     display: block;
-  }
-  
-  img:hover {
-    opacity: 1.0;
-  }
-  
+}
 
+img:hover {
+    opacity: 1.0;
+}
 
 nav {
     background-color: transparent; 
@@ -43,37 +40,36 @@ nav {
 }
 
 main {
-display: flex;
-flex-direction: row;
-margin-top: 50px;
-justify-content: space-around;
-padding: 20px;
-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    height: 100vh;
+    margin-top: 0;
+
 }
 
 h2 {
-font-size: 45px;/*Diminui um pouco o tamanho pois estava sobrepondo o texto. Ass: Bianca*/
-line-height: 10px;
-font-family: helvetica;
-
+    font-size: 45px;
+    line-height: 10px;
+    font-family: helvetica;
 }
 
-span{
+span {
     color: red;
-
 }
 
 h2 span {
     text-transform: uppercase;
-    
 }
 
-p{
+p {
     line-height: 20px;
     max-width: 500px;
     font-family: helvetica;
 }
-
 
 .menu-image {
     display: flex;
@@ -112,20 +108,23 @@ p{
     margin-left: 15px;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center; 
 }
 
-/*Bloco login página inicial*/
+
 .login-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
     height: 100vh;
     padding-right: 50px;
-    width: 50%;
+    width: 30%;
+    margin-left: 0%;
+    margin-top: -40px; 
+    
 }
 
 .card-login {
@@ -143,7 +142,6 @@ footer{
     font-size: 28px;
     margin-bottom: 20px;
     text-transform: uppercase;
-   
 }
 
 .card-login h3 {
@@ -152,9 +150,7 @@ footer{
     font-size: 15px;
     margin-bottom: 20px;
     text-transform: uppercase;
-   
 }
-
 
 .textfield {
     margin-bottom: 20px;
@@ -181,7 +177,8 @@ footer{
     border-color: red;
 }
 
-.btn-login {
+/* Estilos do botões de Login e Cadastro */
+.btn-login, .btn-cadastrar, .btn_voltar {
     text-align: center;
     background-color: red;
     color: white;
@@ -196,52 +193,61 @@ footer{
     font-weight: 800;
     letter-spacing: 3px;
     box-sizing: border-box;
+    margin-top: 15px; 
 }
 
-.btn-login:hover {
+.btn-login:hover, .btn-cadastrar:hover, .btn_voltar:hover {
     background-color: darkred;
 }
 
-.btn-cadastro{
-    text-align: center;
-    background-color: red;
-    color: white;
-    padding: 15px 30px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 100%;
+
+.texto-sobre {
     font-size: 18px;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    box-sizing: border-box;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: justify;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
-.btn-cadastro:hover {
-    background-color: darkred;
+/* Manter essa parte para que o 'sobre' siga o padrão do style ass: vic */
+body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: white !important;
 }
-/*Style bloco login página inicial*/
 
+.welcome-container {
+    max-width: 75%; 
+    flex-grow: 1;
+}
 
-/* Style tela decadastro*/
-
+.welcome-container h2 {
+    font-size: 45px;
+    line-height: 10px;
+    font-family: helvetica;
+}
+.welcome-container p {
+    line-height: 20px;
+    max-width: 500px;
+    font-family: helvetica;
+} 
 .main-cadastro {
     display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    justify-content: space-around;
-    padding: 20px;
-    height: 750px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    height: auto;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .cadastro-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 750px;
-    width: 50%;
+    flex-grow: 1; 
+    width: 30%;
 }
 
 .card-cadastro {
@@ -254,48 +260,9 @@ footer{
     height: 95%;
 }
 
-
-.btn-cadastrar{
-    text-align: center;
-    background-color: red;
-    color: white;
-    padding: 15px 15px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    box-sizing: border-box;
-}
-
-.btn-cadastrar:hover {
-    background-color: darkred;
-}
-
 .form-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between
-}
-/* Style tela de cadastro*/
-
-.texto-sobre {
-    font-size: 18px;
-    line-height: 1.6;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-align: justify;
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-/*Manter essa parte para que o 'sobre' siga o padrao do style. ASS: Vitoria*/
-body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
-    font-family: Arial, Helvetica, sans-serif !important;
-    color: white !important;
+    justify-content: space-between;
 }
