@@ -156,8 +156,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(2)">Enviar</button>
+                <div class="submitted-review" id="review-2"></div>
             </div>
         </div>
 
@@ -169,8 +169,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(3)">Enviar</button>
+                <div class="submitted-review" id="review-3"></div>
             </div>
         </div>
 
@@ -182,8 +182,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(4)">Enviar</button>
+                <div class="submitted-review" id="review-4"></div>
             </div>
         </div>
 
@@ -195,8 +195,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(5)">Enviar</button>
+                <div class="submitted-review" id="review-5"></div>
             </div>
         </div>
 
@@ -208,8 +208,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(6)">Enviar</button>
+                <div class="submitted-review" id="review-6"></div>
             </div>
         </div>
 
@@ -221,8 +221,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(7)">Enviar</button>
+                <div class="submitted-review" id="review-7"></div>
             </div>
         </div>
 
@@ -234,8 +234,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(8)">Enviar</button>
+                <div class="submitted-review" id="review-8"></div>
             </div>
         </div>
 
@@ -247,8 +247,8 @@
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <button onclick="submitReview(9)">Enviar</button>
+                <div class="submitted-review" id="review-9"></div>
             </div>
         </div>
     </div>
@@ -276,7 +276,18 @@
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
+     <script>
+        document.querySelector(".search-box").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                const termo = this.value.trim();
+                if (termo !== "") {
+                    window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                }
+            }
+        });
+    </script>
     
+      
 </body>
 
 </html>

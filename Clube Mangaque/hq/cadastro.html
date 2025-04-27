@@ -82,5 +82,17 @@
             alert('Cadastro realizado com sucesso!');
         }
     </script>
+
+<script>
+    document.querySelector(".search-box").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            const termo = this.value.trim();
+            if (termo !== "") {
+                window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
