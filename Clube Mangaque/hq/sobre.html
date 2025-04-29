@@ -96,6 +96,22 @@
                         }
                     });
                 </script>
+                <footer>
+                    <p style="position: absolute; left: 30%"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+                </footer>
+                <script>
+                    document.getElementById("ano").textContent = new Date().getFullYear();
+                </script>
+                <script>
+                    document.getElementById("search-input").addEventListener("keypress", function(e) {
+                      if (e.key === "Enter") {
+                        const termo = this.value.trim();
+                        if (termo !== "") {
+                          window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                        }
+                      }
+                    });
+                  </script>
                 
             </div>
         </div>
