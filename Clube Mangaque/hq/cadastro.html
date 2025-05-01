@@ -16,15 +16,11 @@
             </div>
         </nav>
     </header>
-    <div>
-        <button class="btn_voltar">Voltar</button>
-    </div>
     <main class="main-cadastro">
         <div class="cadastro-container">
             <div class="card-cadastro">
                 <h1>Cadastre-se</h1>
-                    <form class="formCadastro" action="processaCadastro.php" method="POST">
-                    
+                <form class="formCadastro" action="processaCadastro.php" method="POST">
                     <div class="textfield">
                         <label for="nome">Nome Completo</label>
                         <input type="text" name="nomeCompleto" placeholder="Digite seu nome e sobrenome" required>
@@ -50,6 +46,8 @@
                         <input type="password" name="confirmarSenha" placeholder="Confirme sua senha" required>
                     </div>
                     <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                    <button type="button" class="btn_voltar" onclick="window.location.href='index.html'">Voltar</button>
+
                 </form>
             </div>
         </div>
@@ -59,12 +57,12 @@
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
 
-    <!--Atualiza o ano automaticamente-->
+    <!-- Atualiza o ano automaticamente -->
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
 
-    <!--Apresentação das mensagens de erro-->
+    <!-- Apresentação das mensagens de erro -->
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const erro = urlParams.get('erro');
@@ -82,5 +80,17 @@
             alert('Cadastro realizado com sucesso!');
         }
     </script>
+
+    <script>
+        document.querySelector(".search-box").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                const termo = this.value.trim();
+                if (termo !== "") {
+                    window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>

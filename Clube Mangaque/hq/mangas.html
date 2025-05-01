@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,16 +35,15 @@
 
         .poster {
             width: 100%;
-            max-width: 300px;
-            height: auto;
             border-radius: 10px;
+            margin-bottom: 10px;
             cursor: pointer;
             transition: transform 0.3s;
             display: block;
         }
 
         .poster:hover {
-            transform: scale(1.05);
+            transform: scale(1.010);
         }
 
         .review {
@@ -107,149 +108,146 @@
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
+                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+
                 </ul>
                 <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
     </header>
     <div style="text-align: center; color: white;">
-
-
-
         <h2>Mangás</h2>
         <font size="4">Deixe sua review e ajude outros leitores a saber o que você achou!</font>
     </div>
 
-     <!--essa parte de reviews com estrela vai sair assim que o banco de dados começar a ser feito e criar outro CSS, ficando só a capa-->
-
     <div class="container">
         <div class="mangas" data-index="0">
-            <img src="./images/juju.png" alt="Jujutsu Kaisen #1" class="poster">
+            <img src="./images/juju.png" alt="Jujutsu Kaisen #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Jujutsu Kaisen #1</span></font>
             <div class="review">
                 <div class="rating" onclick="rate(0, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
                 <button onclick="submitReview(0)">Enviar</button>
                 <div class="submitted-review" id="review-0"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="1">
-            <img src="./images/demon.png" alt="Demon Slayer #1" class="poster">
+            <img src="./images/demon.png" alt="Demon Slayer #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Demon Slayer #1</span></font>
             <div class="review">
                 <div class="rating" onclick="rate(1, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
                 <button onclick="submitReview(1)">Enviar</button>
                 <div class="submitted-review" id="review-1"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="2">
-            <img src="./images/onze.png" alt="Super Onze #1" class="poster">
+            <img src="./images/onze.png" alt="Super Onze #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Super Onze #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(2, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(2)">Enviar</button>
+                <div class="submitted-review" id="review-2"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="3">
-            <img src="./images/solo.png" alt="Solo Leveling #1" class="poster">
+            <img src="./images/solo.png" alt="Solo Leveling #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Solo Leveling #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(3, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(3)">Enviar</button>
+                <div class="submitted-review" id="review-3"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="4">
-            <img src="./images/given.png" alt="Given #1" class="poster">
+            <img src="./images/given.png" alt="Given #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Given #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(4, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(4)">Enviar</button>
+                <div class="submitted-review" id="review-4"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="5">
-            <img src="./images/blue.png" alt="Blue Lock #1" class="poster">
+            <img src="./images/blue.png" alt="Blue Lock #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Blue Lock #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(5, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(5)">Enviar</button>
+                <div class="submitted-review" id="review-5"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="6">
-            <img src="./images/one.png" alt="One Piece #1" class="poster">
+            <img src="./images/one.png" alt="One Piece #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">One Piece #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(6, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(6)">Enviar</button>
+                <div class="submitted-review" id="review-6"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="7">
-            <img src="./images/po.png" alt="Pokemon #1" class="poster">
+            <img src="./images/po.png" alt="Pokemon #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Pokemon #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(7, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(7)">Enviar</button>
+                <div class="submitted-review" id="review-7"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="8">
-            <img src="./images/dungeon.png" alt="Dungeon Meshi #1" class="poster">
+            <img src="./images/dungeon.png" alt="Dungeon Meshi #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Dungeon Meshi #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(8, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(8)">Enviar</button>
+                <div class="submitted-review" id="review-8"></div>
             </div>
         </div>
 
         <div class="mangas" data-index="9">
-            <img src="./images/aot.png" alt="Ataque Dos Titãs #1" class="poster">
+            <img src="./images/aot.png" alt="Ataque Dos Titãs #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Ataque Dos Titãs #1</span></font>
             <div class="review">
-                <div class="rating" onclick="rate(1, event)">
+                <div class="rating" onclick="rate(9, event)">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <textarea placeholder="" class="review-text"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
+                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
+                <button onclick="submitReview(9)">Enviar</button>
+                <div class="submitted-review" id="review-9"></div>
             </div>
         </div>
     </div>
@@ -261,11 +259,12 @@
             Array.from(stars).forEach((star, i) => {
                 star.classList.toggle("selected", i <= selectedIndex);
             });
-            document.querySelector(`.hq[data-index='${index}']`).setAttribute("data-rating", selectedIndex + 1);
+            document.querySelector(`.mangas[data-index='${index}']`).setAttribute("data-rating", selectedIndex + 1);
         }
+
         function submitReview(index) {
-            let reviewText = document.querySelector(`.hq[data-index='${index}'] .review-text`).value;
-            let rating = document.querySelector(`.hq[data-index='${index}']`).getAttribute("data-rating") || "0";
+            let reviewText = document.querySelector(`.mangas[data-index='${index}'] .review-text`).value;
+            let rating = document.querySelector(`.mangas[data-index='${index}']`).getAttribute("data-rating") || "0";
             let reviewContainer = document.getElementById(`review-${index}`);
             reviewContainer.innerHTML = `<strong>Nota: ${rating} estrelas</strong><p>${reviewText}</p>`;
         }
@@ -274,10 +273,22 @@
     <footer>
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
-    
+
+    <script>
+        document.querySelector(".search-box").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                const termo = this.value.trim();
+                if (termo !== "") {
+                    window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                }
+            }
+        });
+    </script>
+
 </body>
 
 </html>

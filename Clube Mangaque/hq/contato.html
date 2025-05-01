@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
     <link rel="stylesheet" href="styleContato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -19,9 +21,10 @@
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
+                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+
                 </ul>
 
-                 <!--falta tornar a searchbox util com o BD-->
                 <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
@@ -43,7 +46,7 @@
                 
                 <label for="message">Mensagem</label>
                 <textarea name="message" id="message" placeholder="Escreva sua mensagem"></textarea>
-                <!-- necessário melhorar a estilização do arquivo obrigado.html para padronização da logo e dos menus, o css está linkado no arquivo styleContato.css --->
+              <!-- o arquivo está retornando para o próprio arquivo--->
                 <input type="hidden" name="_next" value="http://127.0.0.1:5500/Clube%20Mangaque/hq/contato.html">
                 <button type="submit">Enviar</button> 
             </form>
@@ -56,5 +59,16 @@
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
+     <script>
+        document.querySelector(".search-box").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                const termo = this.value.trim();
+                if (termo !== "") {
+                    window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                }
+            }
+        });
+    </script>
+    
 </body>
 </html>

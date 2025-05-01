@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | Clube Mangaquê</title>
+    <link rel="stylesheet" href="style.css">     <!-- Header, fundo e estilos globais -->
+    <link rel="stylesheet" href="perfil.css">    <!-- Estilo específico da tela de perfil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="menu-image">
+                <img src="./images/mangaque.png" alt="logo">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="mangas.html">Mangás</a></li>
+                <li><a href="hqs.html">Hq's</a></li>
+                <li><a href="perfil.html"> <i class="fas fa-user"> </i> Perfil</a></li>
+
+            </ul>
+            <input type="text" class="search-box" placeholder="Buscar...">
+        </div>
+    </nav>
+</header>
+
+<main class="perfil-wrapper">
+    <section class="perfil-info">
+        <div class="perfil-header">
+            <label for="foto">
+                <img src="./img/avatar.jpg" alt="Foto de Perfil" class="foto-perfil">
+            </label>
+            <div class="dados-usuario">
+                <h2>Nome do Usuário</h2>
+                <p>usuario@email.com</p>
+                <p>Visitas: <span id="contagem-visitas">120</span></p>
+                <p>Likes recebidos: <span id="contagem-likes">45</span></p>
+                <p>Ver favoritos <span id="contagem-likes">❤</span></p>
+                <button class="btn-editar-perfil">Editar Perfil</button>
+            </div>
+        </div>
+        <form class="form-editar" style="display: none;">
+            <input type="file" id="foto" accept="image/*">
+            <input type="text" id="nome" placeholder="Nome do Usuário" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="date" id="nasc" placeholder="Data de Nascimento" required>
+            <input type="text" id="cidade" placeholder="Cidade" required>
+            <button class="btn-salvar">Salvar</button>
+        </form>
+    </section>
+
+    <section class="obras-lidas-section">
+        <h2>Obras lidas</h2>
+        <div class="lista-obras">
+            <div class="obra-card" data-lida-em="2025-04-25">
+                <div class="info-obra">
+                    <h3>Nana <span class="ano-publicacao">(2000-2009)</span></h3>
+                    <p> Ai Yazawa</p>
+                    <button class="btn-remover">Remover</button>
+                </div>
+                <img src="images/capa-nana.jpg" alt="Capa de Nana" class="capa-manga">
+            </div>
+
+            <div class="obra-card" data-lida-em="2025-03-20">
+                <div class="info-obra">
+                    <h3>Solanin <span class="ano-publicacao">(2005-2006)</span></h3>
+                    <p> Inio Asano</p>
+                    <button class="btn-remover">Remover</button>
+                </div>
+                <img src="images/capa-solanin.jpg" alt="Capa de Solanin" class="capa-manga">
+            </div>
+            
+            <div class="obra-card" data-lida-em="2025-02-12">
+                <div class="info-obra">
+                    <h3>Akira <span class="ano-publicacao">(1982-1990)</span></h3>
+                    <p>Katsuhiro Otomo</p>
+                    <button class="btn-remover">Remover</button>
+                </div>
+                <img src="images/capa-akira.png" alt="Capa de Akira" class="capa-manga">
+            </div>
+
+            <div class="obra-card" data-lida-em="2025-01-15">
+                <div class="info-obra">
+                    <h3>Death Note <span class="ano-publicacao">(2003-2006)</span></h3>
+                    <p>Tsugumi Ohba e Takeshi Obata</p>
+                    <button class="btn-remover">Remover</button>
+                </div>
+                <img src="images/capa-dn.jpg" alt="Capa de Death Note" class="capa-manga">
+            </div>
+
+        </div>           
+    </section>
+    
+    <section class="lista-mangas">
+        <h2>Minhas avaliações</h2>
+        <table class="tabela-mangas">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Nota</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One Piece</td>
+                    <td>Eiichiro Oda</td>
+                    <td>4/5⭐</td>
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-excluir">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+    document.querySelector('.btn-editar-perfil').addEventListener('click', function() {
+        document.querySelector('.form-editar').style.display = 'block';
+    });
+</script>
+<script>
+    document.querySelector(".search-box").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            const termo = this.value.trim();
+            if (termo !== "") {
+                window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

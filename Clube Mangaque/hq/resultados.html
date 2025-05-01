@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Resultados da Busca - Clube Mangaquê</title>
   <link rel="stylesheet" href="style-resultados.css">
-
   <style>
     body {
       background-color: #181818;
@@ -30,7 +29,7 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const termo = params.get("q").toLowerCase();
+    const termo = (params.get("q") || "").toLowerCase();
 
     const hqs = [
       { titulo: "Crise Nas Infinitas Terras", imagem: "./images/crise.png", link: "hqs.html" },
@@ -51,27 +50,25 @@
     ];
 
     const mangas = [
-  { titulo: "Jujutsu Kaisen", imagem: "./images/juju.png", link: "mangas.html" },
-  { titulo: "Demon Slayer", imagem: "./images/demon.png", link: "mangas.html" },
-  { titulo: "Super Onze", imagem: "./images/onze.png", link: "mangas.html" },
-  { titulo: "Solo Leveling", imagem: "./images/solo.png", link: "mangas.html" },
-  { titulo: "Given", imagem: "./images/given.png", link: "mangas.html" },
-  { titulo: "Blue Lock", imagem: "./images/blue.png", link: "mangas.html" },
-  { titulo: "One Piece", imagem: "./images/one.png", link: "mangas.html" },
-  { titulo: "Pokemon", imagem: "./images/po.png", link: "mangas.html" },
-  { titulo: "Dungeon Meshi", imagem: "./images/dungeon.png", link: "mangas.html" },
-  { titulo: "Ataque Dos Titãs", imagem: "./images/aot.png", link: "mangas.html" }
-];
+      { titulo: "Jujutsu Kaisen", imagem: "./images/juju.png", link: "mangas.html" },
+      { titulo: "Demon Slayer", imagem: "./images/demon.png", link: "mangas.html" },
+      { titulo: "Super Onze", imagem: "./images/onze.png", link: "mangas.html" },
+      { titulo: "Solo Leveling", imagem: "./images/solo.png", link: "mangas.html" },
+      { titulo: "Given", imagem: "./images/given.png", link: "mangas.html" },
+      { titulo: "Blue Lock", imagem: "./images/blue.png", link: "mangas.html" },
+      { titulo: "One Piece", imagem: "./images/one.png", link: "mangas.html" },
+      { titulo: "Pokemon", imagem: "./images/po.png", link: "mangas.html" },
+      { titulo: "Dungeon Meshi", imagem: "./images/dungeon.png", link: "mangas.html" },
+      { titulo: "Ataque Dos Titãs", imagem: "./images/aot.png", link: "mangas.html" }
+    ];
 
-
-    const resultados = [...hqs, ...mangas].filter(item =>
-  item.titulo.toLowerCase().includes(termo)
-);
-
+    const resultados = [...hqs, ...mangas, ...comics].filter(item =>
+      item.titulo.toLowerCase().includes(termo)
+    );
 
     const container = document.getElementById("resultados");
 
-    if (resultados.length === 0) {
+    if (termo === "" || resultados.length === 0) {
       container.innerHTML = "<p>Nenhum resultado encontrado.</p>";
     } else {
       resultados.forEach(item => {

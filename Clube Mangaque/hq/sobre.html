@@ -6,6 +6,8 @@
     <title>Clube Mangaquê</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -20,6 +22,8 @@
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
+                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+
                 </ul>
                 <input type="text" class="search-box" placeholder="Buscar...">
             </div>
@@ -54,11 +58,11 @@
             <hr style="width:950px" class="w3-opacity">
 
             <div class="w3-content w3-display-container w3-center">
-                <img class="slides" src="imgmembros/Mat.png" style="width:20%">
-                <img class="slides" src="imgmembros/vic.png" style="width:20%">
-                <img class="slides" src="imgmembros/bianca.png" style="width:13%">
-                <img class="slides" src="imgmembros/wes.png" style="width:20%">
-                <img class="slides" src="imgmembros/joice.png" style="width:15%">
+                <img class="slides" src="imgmembros/Matheus.png" style="width:90%">
+                <img class="slides" src="imgmembros/Vitoria.png" style="width:90%">
+                <img class="slides" src="imgmembros/Biancae.png" style="width:90%">
+                <img class="slides" src="imgmembros/Wesley.png" style="width:90%">
+                <img class="slides" src="imgmembros/joyce.png" style="width:90%">
 
                 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -82,6 +86,33 @@
                         x[slideIndex-1].style.display = "block";
                     }
                 </script>
+                 <script>
+                    document.querySelector(".search-box").addEventListener("keypress", function(e) {
+                        if (e.key === "Enter") {
+                            const termo = this.value.trim();
+                            if (termo !== "") {
+                                window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                            }
+                        }
+                    });
+                </script>
+                <footer>
+                    <p style="position: absolute; left: 30%"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+                </footer>
+                <script>
+                    document.getElementById("ano").textContent = new Date().getFullYear();
+                </script>
+                <script>
+                    document.getElementById("search-input").addEventListener("keypress", function(e) {
+                      if (e.key === "Enter") {
+                        const termo = this.value.trim();
+                        if (termo !== "") {
+                          window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                        }
+                      }
+                    });
+                  </script>
+                
             </div>
         </div>
     </div>

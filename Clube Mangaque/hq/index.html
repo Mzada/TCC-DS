@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -19,22 +21,24 @@
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="mangas.html">Mangás</a></li>
                     <li><a href="hqs.html">Hq's</a></li>
+                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
                 </ul>
-                <input type="text" class="search-box" placeholder="Buscar...">
+                <input type="text" id="search-input" placeholder="Buscar...">
+
             </div>
         </nav>
     </header>
 
     <main class="main-cadastro">
-        <aside>
+        <aside class="welcome-container">
             <h2><span>BEM VINDO</span></h2>
             <h2>AO CLUBE MANGAQUÊ!</h2>
             <p>Explore e descubra os melhores mangás e Hq's do nosso acervo!
              Aqui você pode avaliar, comentar e registrar suas leituras para uma boa comunicação e ajuda na comunidade.
             </p>
         </aside>
-        <div class="login-container">
-            <div class="card-login">
+        <div class="login-container" style="height: 510px;">
+            <div class="card-login" style="height: 500px;">
                 <h1>Entrar</h1>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
@@ -47,8 +51,7 @@
                 <button class="btn-login">Login</button>
 
                 <h3>ou</h3>
-                <button class="btn-cadastro">Cadastre-se</button>
-            </div>
+                <button class="btn-cadastrar" onclick="window.location.href='cadastro.html'">Cadastre-se</button>            </div>
         </div>
     </main>
     <footer>
@@ -57,5 +60,15 @@
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
+    <script>
+        document.getElementById("search-input").addEventListener("keypress", function(e) {
+          if (e.key === "Enter") {
+            const termo = this.value.trim();
+            if (termo !== "") {
+              window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+            }
+          }
+        });
+      </script>
 </body>
 </html>

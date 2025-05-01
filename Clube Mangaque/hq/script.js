@@ -1,17 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
     const searchBox = document.querySelector(".search-box");
-
+    let timeout;
 
     searchBox.addEventListener("input", () => {
-        const termo = searchBox.value.toLowerCase();
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            const termo = searchBox.value.toLowerCase();
+            const cards = document.querySelectorAll(".hq");
+            let hasMatches = false;
 
-
-        const cards = document.querySelectorAll(".hq");
-        if (cards.length > 0) {
             cards.forEach(card => {
-                const titulo = card.querySelector("span")?.textContent.toLowerCase() || "";
-                card.style.display = titulo.includes(termo) ? "block" : "none";
+                const titulo = card.querySelector(".title")?.textContent.toLowerCase() || "";
+                const descricao = card.querySelector(".desc")?.textContent.toLowerCase() || "";
+                const shouldShow = titulo.includes(termo) || descricao.includes(termo);
+                card.style.display = shouldShow ? "block" : "none";
+                if (shouldShow) hasMatches = true;
             });
-        }
+
+            //"Sem Resultados" mensagem
+            const noResultsMsg = document.querySelector(".no-results");
+            if (noResultsMsg) {
+                noResultsMsg.style.display = hasMatches ? "none" : "block";
+            }
+        }, 300); 
     });
 });
