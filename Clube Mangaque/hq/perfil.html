@@ -36,21 +36,25 @@
                 <img src="./img/avatar.jpg" alt="Foto de Perfil" class="foto-perfil">
             </label>
             <div class="dados-usuario">
-                <h2>Nome do Usuário</h2>
-                <p>usuario@email.com</p>
-                <p>Visitas: <span id="contagem-visitas">120</span></p>
-                <p>Likes recebidos: <span id="contagem-likes">45</span></p>
-                <p>Ver favoritos <span id="contagem-likes">❤</span></p>
+                <h2 id="apelidoDisplay"></h2>
+                <p id="emailDisplay"></p>
+                <p>Visitas: <span id="contagem-visitas">120</span></p> <!--Acredito que não seja necessário nomomento-->
+                <p>Likes recebidos: <span id="contagem-likes">45</span></p> <!--Acredito que não seja necessário no momento-->
+                <p>Ver favoritos <span id="contagem-likes">❤</span></p> <!--Acredito que não seja necessário nomomento-->
                 <button class="btn-editar-perfil">Editar Perfil</button>
             </div>
         </div>
-        <form class="form-editar" style="display: none;">
+        <form action="atualizarPerfil.php" class="form-editar" style="display: none;">
             <input type="file" id="foto" accept="image/*">
-            <input type="text" id="nome" placeholder="Nome do Usuário" required>
-            <input type="email" id="email" placeholder="E-mail" required>
-            <input type="date" id="nasc" placeholder="Data de Nascimento" required>
-            <input type="text" id="cidade" placeholder="Cidade" required>
-            <button class="btn-salvar">Salvar</button>
+            <label for="nomeCompleto">Nome Completo</label>
+            <input type="text" id="nome_completo" name="nomeCompleto" placeholder="Digite seu nome e sobrenome" required>
+            <label for="apelido">Apelido/Nome Social</label>
+            <input type="text" id="apelidoEditar" name="apelido" placeholder="Como deseja ser chamado?" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="emailEditar" name="editar" placeholder="Digite seu e-mail" required>
+            <!--<input type="date" id="nasc" placeholder="Data de Nascimento" required> Acredito que não seja necessário na edição de perfil-->
+            <!--<input type="text" id="cidade" placeholder="Cidade" required> Essa informação não existe no cadastro-->
+            <button type="submit" class="btn-salvar">Salvar</button>
         </form>
     </section>
 
@@ -126,6 +130,7 @@
     <p>&copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
 </footer>
 
+<!--Script que atualiza o ano automaticamente-->
 <script>
     document.getElementById("ano").textContent = new Date().getFullYear();
     document.querySelector('.btn-editar-perfil').addEventListener('click', function() {
@@ -142,6 +147,53 @@
         }
     });
 </script>
+
+<!--Script que puxa o nome e email-->
+<script>
+    fetch('getUsuario.php')
+      .then(res => res.json())
+      .then(data => {
+
+        //Dados Display
+            document.getElementById('apelidoDisplay').textContent = data.apelido;
+            document.getElementById('emailDisplay').textContent = data.email;
+
+            //Dados carregados somente na ação do botão
+            document.querySelector(".btn-editar-perfil").addEventListener("click", function() {
+
+            document.querySelector(".form-editar").style.display = "block";
+
+
+            //Puxa os dados para o Formulario de Edição
+            document.getElementById('nome_completo').value = data.nome_completo;
+            document.getElementById('apelidoEditar').value = data.apelido;
+            document.getElementById('emailEditar').value = data.email;
+
+            //document.getElementById('nome_completo').value = data.nome_completo;
+            //document.getElementById('apelido').setAttribute('value', data.apelido);
+            //document.getElementById('email').setAttribute('value', data.email);
+
+            });
+            //document.getElementById('apelido').textContent = data.apelido;
+            //document.getElementById('email').textContent = data.email;
+
+        })
+        .catch(err => console.error('Erro:', err));
+</script>
+
+<!--Script mensagens de Atualização de perfil-->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const erro = urlParams.get('erro');
+    const sucesso = urlParams.get('sucesso');
+
+    if(erro == 'bd'){
+        alert('Erro ao atualizar o perfil. Tente novamente mais tarde.');
+    }else if(sucesso == '1'){
+        alert('Cadastro atualizado com sucesso!');
+    }
+</script>
+
 
 </body>
 </html>

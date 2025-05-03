@@ -40,26 +40,33 @@
         <div class="login-container" style="height: 510px;">
             <div class="card-login" style="height: 500px;">
                 <h1>Entrar</h1>
-                <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario" placeholder="Digite seu e-mail">
+                <form class="formLogin" action="validaLogin.php" method="POST">
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Senha">
+                    </div>
+                    <button class="btn-login">Login</button>
+                </form>
+                    <h3>ou</h3>
+                    <button class="btn-cadastrar" onclick="window.location.href='cadastro.html'">Cadastre-se</button>            
                 </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha">
-                </div>
-                <button class="btn-login">Login</button>
-
-                <h3>ou</h3>
-                <button class="btn-cadastrar" onclick="window.location.href='cadastro.html'">Cadastre-se</button>            </div>
+                
         </div>
     </main>
     <footer>
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+
+    <!--Scrpit que atualiza o ano automaticamente-->
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
+
+
     <script>
         document.getElementById("search-input").addEventListener("keypress", function(e) {
           if (e.key === "Enter") {
@@ -70,5 +77,20 @@
           }
         });
       </script>
+
+<!--Script mensagens de erro de login-->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const erro = urlParams.get('erro');
+
+    if(erro == 'senha'){
+        alert('Senha inválida. Tente novamente!');
+    }else if(erro == 'email'){
+        alert('Usuario inválido. Tente novamente!');
+    }
+</script>
+
+
+
 </body>
 </html>
