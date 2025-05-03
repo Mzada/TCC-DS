@@ -199,7 +199,7 @@ footer {
     font-weight: 800;
     letter-spacing: 3px;
     box-sizing: border-box;
-    margin-top: 15px; 
+    margin-top: 10px; 
 }
 
 .btn-login:hover, .btn-cadastrar:hover, .btn_voltar:hover {

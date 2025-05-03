@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube Mangaquê</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="menu-image">
+                    <img src="./images/mangaque.png" alt="logo">
+                </div>             
+            </div>
+        </nav>
+    </header>
+    <main class="main-cadastro">
+        <div class="cadastro-container">
+            <div class="card-cadastro">
+                <h1>Recuperação de Senha</h1>
+                <form class="formCadastro" action="actionRecuperarSenha.php" method="POST">
+                    <div class="textfield">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="novaSenha">Nova Senha</label>
+                        <input type="password" name="novaSenha" id="novaSenha" placeholder="Digite a nova senha" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="confirmarSenha">Confirmar Senha</label>
+                        <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha" required>
+                    </div>
+                    <button type="submit" class="btn-cadastrar">Recuperar Senha</button>
+                </form>
+                <button type="button" class="btn_voltar" onclick="window.location.href='index.html'">Voltar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Atualiza o ano automaticamente -->
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Apresentação das mensagens de erro -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const sucesso = urlParams.get('sucesso');
+
+        if(erro == 'email'){
+            alert('E-mail não cadastrado!');
+        }else if(erro == 'senhas'){
+            alert('As senhas não coincidem!');
+        }else if(erro == 'bd'){
+            alert('Erro ao atualizar. Tente novamente mais tarde');
+        }else if(sucesso == '1'){
+            alert('Senha alterada com com sucesso!');
+        }
+    </script>
+
+    <script>
+        document.querySelector(".search-box").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                const termo = this.value.trim();
+                if (termo !== "") {
+                    window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

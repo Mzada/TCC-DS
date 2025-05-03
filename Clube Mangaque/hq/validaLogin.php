@@ -14,18 +14,18 @@
         $usuario = mysqli_fetch_assoc($resultado);
 
         if(password_verify($senha, $usuario['senha'])){
-            $_SESSION['IdUsuario'] = $usuario['idUsuario'];
+            $_SESSION['IdUsuario'] = $usuario['IdUsuario'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['email'] = $usuario['email'];
 
-            header("Location: perfil.php");
+            header("Location: perfil.html");
             exit;
         }else{
-            header("Location: index.php?erro=senha");
+            header("Location: index.html?erro=senha");
             exit();
         }   
     }else{
-        header("Location: index.php?erro=email");
+        header("Location: index.html?erro=email");
         exit();
     }
 

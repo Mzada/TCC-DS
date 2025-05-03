@@ -28,14 +28,12 @@ $idade = $hoje->diff($nascimento)->y;
 if ($idade < 16) {
     header("Location: cadastro.html?erro=idade"); // Redireciona a mensagem de erro para a página de cadastro
     exit();
-    //die("Você deve ter pelo menos 16 anos para se cadastrar.");
 }
 
 //Verifica se as senhas são iguais
 if ($senha !== $confirmarSenha) {
     header("Location: cadastro.html?erro=senha"); // Redireciona a mensagem de erro para a página de cadastro
     exit();
-    //die("As senhas não coincidem.");
 }
 
 //Criptografar a senha
@@ -51,7 +49,6 @@ mysqli_stmt_store_result($stmt_verifica);
 if (mysqli_stmt_num_rows($stmt_verifica) > 0) {
     header("Location: cadastro.html?erro=email"); // Redireciona a mensagem de erro para a página de cadastro
     exit();
-    //die("Este email já está cadastrado.");
 }
 
 mysqli_stmt_close($stmt_verifica);
@@ -70,11 +67,9 @@ $stmt->bind_param("sssss", $nome, $apelido, $email, $senhaCriptografada, $dataNa
 if($stmt->execute()){
     header("Location: cadastro.html?sucesso=1"); // Redireciona para a página de login com sucesso
     exit();
-    //echo "Cadastro realizado com sucesso!";
 } else {
     header("Location: cadastro.html?erro=bd"); // Redireciona a mensagem de erro para a página de cadastro
     exit();
-    //echo "Erro ao cadastrar: " . $stmt->error;
 }
 
 $stmt->close();
