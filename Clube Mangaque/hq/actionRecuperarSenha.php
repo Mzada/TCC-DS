@@ -27,9 +27,10 @@
     $senhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("UPDATE usuarios SET senha = ? WHERE email = ?");
     $stmt->bind_param("ss", $senhaHash, $email);
+    $stmt->execute();
 
    if($stmt->affected_rows > 0){
-        header("Location: login.html?sucesso=1");
+        header("Location: index.html?sucesso=1");
         exit();
    }else{
         header("Location: recuperarSenha.html?erro=db");

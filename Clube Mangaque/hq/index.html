@@ -38,21 +38,23 @@
             </p>
         </aside>
         <div class="login-container" style="height: 510px;">
-            <div class="card-login" style="height: 500px;">
+            <div class="card-login" style="height: 450px;">
                 <h1>Entrar</h1>
                 <form class="formLogin" action="validaLogin.php" method="POST">
                     <div class="textfield">
                         <label for="usuario">Usuário</label>
-                        <input type="text" name="email" placeholder="Digite seu e-mail">
+                        <input type="text" name="email" id="email" placeholder="Digite seu e-mail">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Senha">
+                        <input type="password" name="senha" id="senha" placeholder="Senha">
                     </div>
                     <button class="btn-login">Login</button>
                 </form>
                     <h3>ou</h3>
-                    <button class="btn-cadastrar" onclick="window.location.href='cadastro.html'">Cadastre-se</button>            
+                    <button class="btn-cadastrar" onclick="window.location.href='cadastro.html'">Cadastre-se</button> 
+                    
+                    <a href="recuperarSenha.html" id="recSenha">Esqueci minha senha</a>    
                 </div>
                 
         </div>
