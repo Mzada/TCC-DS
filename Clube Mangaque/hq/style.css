@@ -120,7 +120,7 @@ footer {
     justify-content: center; 
 }
 
-
+/*região de login e cadastro*/
 .login-container {
     display: flex;
     justify-content: flex-start;

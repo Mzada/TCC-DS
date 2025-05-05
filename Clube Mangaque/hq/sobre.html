@@ -91,7 +91,7 @@
                             .slides {
                                 display: flex;
                                 width: ${23 * imagens.length}%;
-                                transition: transform 1.0s ease-in-out;
+                                transition: transform 2.0s ease-in-out;
                             }
                         
                             .slide {
@@ -144,11 +144,11 @@
                             showSlide();
                         };
                         
-                        // Auto-slide a cada 4 segundos
+                        // Auto-slide a cada 8 segundos
                         setInterval(() => {
                             index = (index + 1) % totalSlides;
                             showSlide();
-                        }, 4000);
+                        }, 8000);
                         </script>
                     </div>
                 </div>
