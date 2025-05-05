@@ -24,7 +24,7 @@
                     <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
 
                 </ul>
-                <input type="text" class="search-box" placeholder=" Buscar...">
+                <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
        
@@ -44,51 +44,116 @@
         <br>
         <h2><span>Equipe de Desenvolvimento</span></h2>
 
-        <div class="w3-padding-64 w3-content">
-            <h2 class="w3-text-white">Membros</h2>
-            <hr style="width:950px" class="w3-opacity">
+        <div>
+            <h2>Membros</h2>
+            <hr style="width:950px">
+            <div>
+                <div class="container">
+                    <div id="sliderContainer">
+                    <script>
+                        // Criando a estrutura do slider
+                        const sliderContainer = document.createElement("div");
+                        sliderContainer.classList.add("slider");
+                        document.getElementById("sliderContainer").appendChild(sliderContainer);
 
-            <div class="w3-content w3-display-container w3-center">
-                <img class="slides" src="imgmembros/Matheus.png" style="width:90%">
-                <img class="slides" src="imgmembros/Vitoria.png" style="width:90%">
-                <img class="slides" src="imgmembros/Biancae.png" style="width:90%">
-                <img class="slides" src="imgmembros/Wesley.png" style="width:90%">
-                <img class="slides" src="imgmembros/joyce.png" style="width:90%">
-
-                <button class="w3-button w3-red w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="w3-button w3-red w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-
-                <script>
-                    var slideIndex = 1;
-                    showDivs(slideIndex);
-
-                    function plusDivs(n) {
-                        showDivs(slideIndex += n);
-                    }
-
-                    function showDivs(n) {
-                        var i;
-                        var x = document.getElementsByClassName("slides");
-                        if (n > x.length) {slideIndex = 1}
-                        if (n < 1) {slideIndex = x.length}
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
-                        }
-                        x[slideIndex-1].style.display = "block";
-                    }
-                </script>
-                 <script>
-                    document.querySelector(".search-box").addEventListener("keypress", function(e) {
-                        if (e.key === "Enter") {
-                            const termo = this.value.trim();
-                            if (termo !== "") {
-                                window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+                        
+                        const slidesDiv = document.createElement("div");
+                        slidesDiv.classList.add("slides");
+                        sliderContainer.appendChild(slidesDiv);
+                        
+                        // Array com os caminhos das imagens
+                        const imagens = [
+                            "imgmembros/Matheus.png",
+                            "imgmembros/Vitoria.png",
+                            "imgmembros/Biancae.png",
+                            "imgmembros/Wesley.png",
+                            "imgmembros/joyce.png"
+                        ];
+                        
+                        imagens.forEach(src => {
+                            let img = document.createElement("img");
+                            img.src = src;
+                            img.classList.add("slide");
+                            slidesDiv.appendChild(img);
+                        });
+                        
+                        // Adicionando estilos via JavaScript
+                        const style = document.createElement("style");
+                        style.innerHTML = `
+                            .slider {
+                                width: 100%;
+                                max-width: 1000px;
+                                margin: auto;
+                                overflow: hidden;
+                                position: relative;
                             }
+                        
+                            .slides {
+                                display: flex;
+                                width: ${23 * imagens.length}%;
+                                transition: transform 1.0s ease-in-out;
+                            }
+                        
+                            .slide {
+                                width: 90%;
+                            }
+                        
+                            .button {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                background-color: red;
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                                padding: 10px;
+                                font-size: 20px;
+                            }
+                        
+                            .prev { left: 0px; }
+                            .next { right: 0px; }
+                        `;
+                        document.head.appendChild(style);
+                        
+                        // Criando botões de navegação
+                        const prevButton = document.createElement("button");
+                        prevButton.innerHTML = "&#10094;";
+                        prevButton.classList.add("button", "prev");
+                        sliderContainer.appendChild(prevButton);
+                        
+                        const nextButton = document.createElement("button");
+                        nextButton.innerHTML = "&#10095;";
+                        nextButton.classList.add("button", "next");
+                        sliderContainer.appendChild(nextButton);
+                        
+                        // Lógica de mudança de slides
+                        let index = 0;
+                        const totalSlides = imagens.length;
+                        
+                        function showSlide() {
+                            slidesDiv.style.transform = `translateX(-${index * 90}%)`;
                         }
-                    });
-                </script>
+                        
+                        prevButton.onclick = () => {
+                            index = (index - 1 + totalSlides) % totalSlides;
+                            showSlide();
+                        };
+                        
+                        nextButton.onclick = () => {
+                            index = (index + 1) % totalSlides;
+                            showSlide();
+                        };
+                        
+                        // Auto-slide a cada 4 segundos
+                        setInterval(() => {
+                            index = (index + 1) % totalSlides;
+                            showSlide();
+                        }, 4000);
+                        </script>
+                    </div>
+                </div>
                 <footer>
-                    <p style="position: absolute; left: 30%"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+                    <p style="position:absolute left 30%"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
                 </footer>
                 <script>
                     document.getElementById("ano").textContent = new Date().getFullYear();
@@ -103,7 +168,7 @@
                       }
                     });
                   </script>
-                
+                </div>
             </div>
         </div>
     </div>
