@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #181818;
+    color: white;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; 
+    padding: 10px;
+}
+
+.header-image {
+    width: 100%; 
+    height: auto;
+    display: block;
+}
+
+img {
+    display: block;
+}
+
+img:hover {
+    opacity: 1.0;
+}
+
+nav {
+    background-color: transparent; 
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    height: 100vh;
+    margin-top: 0;
+
+}
+
+h2 {
+    font-size: 35px;
+    line-height: 10px;
+    font-family: helvetica;
+}
+
+span {
+    color: red;
+}
+
+h2 span {
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 20px;
+    max-width: 500px;
+    font-family: helvetica;
+}
+
+.menu-image {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.menu-image img {
+    height: 300px; 
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.search-box {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+    margin-left: 10px;
+}
+.search-box:focus {
+    background-color: #202020;
+    color: #fff;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    padding-right: 50px;
+    width: 30%;
+    margin-left: 0%;
+    margin-top: -40px; 
+    
+}
+
+.card-login {
+    background: #222;
+    padding: 44px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 350px;
+}
+
+.card-login h1 {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-login h3 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+.textfield {
+    margin-bottom: 20px;
+}
+
+.textfield label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.textfield input:focus {
+    outline: none;
+    border-color: red;
+}
+
+/* Estilos do botões de Login e Cadastro */
+.btn-login, .btn-cadastrar, .btn_voltar {
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.btn-login:hover, .btn-cadastrar:hover, .btn_voltar:hover {
+    background-color: darkred;
+}
+
+
+.texto-sobre {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: justify;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Manter essa parte para que o 'sobre' siga o padrão do style ass: vic */
+body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: white !important;
+}
+
+.welcome-container {
+    max-width: 75%; 
+    flex-grow: 1;
+}
+
+.welcome-container h2 {
+    font-size: 45px;
+    line-height: 10px;
+    font-family: helvetica;
+}
+.welcome-container p {
+    line-height: 20px;
+    max-width: 500px;
+    font-family: helvetica;
+} 
+.main-cadastro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    height: auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1; 
+    width: 30%;
+}
+
+.card-cadastro {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    height: 95%;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
