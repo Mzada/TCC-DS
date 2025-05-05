@@ -271,3 +271,9 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     align-items: center;
     justify-content: space-between;
 }
+
+.hyperlink {
+    position: relative;
+    left: 90px;
+    top: 10px;
+}
