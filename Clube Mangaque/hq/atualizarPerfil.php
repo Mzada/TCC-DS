@@ -1,4 +1,7 @@
 <?php
+    /*var_dump($_POST);
+    exit();*/
+
     session_start();
     require_once 'conexaoBD.php';
 

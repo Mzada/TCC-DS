@@ -44,14 +44,14 @@
                 <button class="btn-editar-perfil">Editar Perfil</button>
             </div>
         </div>
-        <form action="atualizarPerfil.php" class="form-editar" style="display: none;">
+        <form action="atualizarPerfil.php" method="POST" class="form-editar" style="display: none;">
             <input type="file" id="foto" accept="image/*">
             <label for="nome_completo">Nome Completo</label>
             <input type="text" id="nome_completo" name="nome_completo" placeholder="Digite seu nome e sobrenome" required>
-            <label for="apelido">Apelido/Nome Social</label>
+            <label for="apelidoEditar">Apelido/Nome Social</label>
             <input type="text" id="apelidoEditar" name="apelido" placeholder="Como deseja ser chamado?" required>
-            <label for="email">E-mail</label>
-            <input type="email" id="emailEditar" name="editar" placeholder="Digite seu e-mail" required>
+            <label for="emailEditar">E-mail</label>
+            <input type="text" id="emailEditar" name="email" placeholder="Digite seu e-mail" required>
             <!--<input type="date" id="nasc" placeholder="Data de Nascimento" required> Acredito que não seja necessário na edição de perfil-->
             <!--<input type="text" id="cidade" placeholder="Cidade" required> Essa informação não existe no cadastro-->
             <button type="submit" class="btn-salvar">Salvar</button>
