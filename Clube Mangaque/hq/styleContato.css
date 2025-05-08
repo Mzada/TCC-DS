@@ -39,6 +39,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 230px;
 }
 
 main {
@@ -200,4 +201,7 @@ footer{
     outline: none;
     background: darkred;
     
+}
+.formCont {
+    margin-top:15px;                    
 }

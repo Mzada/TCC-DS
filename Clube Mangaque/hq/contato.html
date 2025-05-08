@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleContato.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -36,26 +36,29 @@
         Utilizei o FormSubmit para melhor praticidade
         -->
         <div >
-            <h1>Formulário de Contato</h1>
-            <form action="https://formsubmit.co/sitemangaque@gmail.com" method="POST" class="form">
-
-                <label for="name">Nome</label>
+            <h1 class="formCont">Formulário de Contato</h1>
+            <!--Para uso de lembrança. caso o site for ao ar, retirar essa linha
+                Email: sitemangaque@gmail.com
+                Senha: Mangaque123!-->
+                <form action="https://formsubmit.co/clubemangaque@gmail.com" method="POST" class="form">
+                    
+                    <label for="name">Nome</label>
                 <input type="text" name="name" id="name" placeholder="Nome" required />
 
                 <label for="email">Email</label>
                 <Input type="email" name="email" id="email" placeholder="Email" required/>
-                
-                <label for="message">Mensagem</label>
+                    
+                    <label for="message">Mensagem</label>
                 <textarea name="message" id="message" placeholder="Escreva sua mensagem"></textarea>
-              <!-- o arquivo está retornando para o próprio arquivo--->
-                <input type="hidden" name="_next" value="http://127.0.0.1:5500/Clube%20Mangaque/hq/contato.html">
-                <button type="submit">Enviar</button> 
-            </form>
+              <!-- o arquivo está retornando para o inicio do site--->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/TCC-DS/Clube%20Mangaque/hq/contato.html">
+                    <button type="submit">Enviar</button>
+               </form>
         </div>
     </main>
 
     <footer>
-        <p style="padding: 100px;"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+        <p style="margin-top: 100px;"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
     <script>
         document.getElementById("ano").textContent = new Date().getFullYear();
