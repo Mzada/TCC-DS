@@ -63,13 +63,14 @@ button {
 button:hover {
     background-color: darkred;
 }
-.submitted-review {
+/*.submitted-review {
     margin-top: 10px;
     background: #333;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
-}
+}*/
+
 .search-box {
     padding: 10px;
     border-radius: 5px;

@@ -279,3 +279,28 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     top: 10px;
     text-decoration: none;
 }
+
+/*Div Review Avaliação*/
+.review {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.review input[type="radio"] {
+    display: none;
+}
+
+.review label i.fa-star {
+    color: #ccc;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/*.review input[type="radio"]:checked ~ label i.fa-star,
+.review input[type="radio"]:checked ~ label ~ label i.fa-star {
+    color: darkred;
+}*/
+
+/*Div Review Avaliação*/
