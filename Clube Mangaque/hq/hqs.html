@@ -124,135 +124,347 @@
         <div class="hq" data-index="0">
             <img src="./images/crise.png" alt="Crise Nas Infinitas Terras" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;" padding: "50px;">Crise Nas Infinitas Terras</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(0, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(0)">Enviar</button>
-                <div class="submitted-review" id="review-0"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+                <input type="hidden" name="hq" value="Crise Nas Infinitas Terras">
         </div>
 
         <div class="hq" data-index="1">
             <img src="./images/aranha.png" alt="Homem Aranha E DeadPool" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Homem Aranha E DeadPool</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(1, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(1)">Enviar</button>
-                <div class="submitted-review" id="review-1"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="2">
             <img src="./images/xmen97.png" alt="Xmen 97" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Xmen 97</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(2, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(2)">Enviar</button>
-                <div class="submitted-review" id="review-2"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="3">
             <img src="./images/agatha.png" alt="Agatha Harkness The Salem Saga" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Agatha Harkness The Salem Saga</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(3, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(3)">Enviar</button>
-                <div class="submitted-review" id="review-3"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="4">
             <img src="./images/wanda.png" alt="Scarlet Witch #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Scarlet Witch #1</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(4, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(4)">Enviar</button>
-                <div class="submitted-review" id="review-4"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="5">
             <img src="./images/wayne.png" alt="Batman Wayne Family Adventures #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Batman Wayne Family Adventures #1</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(5, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(5)">Enviar</button>
-                <div class="submitted-review" id="review-5"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="6">
             <img src="./images/loki.png" alt="Loki Agente de Asgard" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Loki Agente de Asgard</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(6, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(6)">Enviar</button>
-                <div class="submitted-review" id="review-6"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="7">
-            <img src="./images/titans.png" alt="Alvorecer dos Titans" class="poster">
+            <img src="./images/titans.png" alt="Alvorecer dos Titans" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Alvorecer dos Titans</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(7, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(7)">Enviar</button>
-                <div class="submitted-review" id="review-7"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="8">
             <img src="./images/arle.png" alt="Harley Quinn The Eat, Bang, Kill Tour #1" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Harley Quinn The Eat, Bang, Kill Tour</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(8, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(8)">Enviar</button>
-                <div class="submitted-review" id="review-8"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
 
         <div class="hq" data-index="9">
             <img src="./images/cr.png" alt="Vox Machina Origins" class="poster" style="width: 300px; height: 445px;">
             <font size="3"><span style="color: white;">Vox Machina Origins</span></font>
-            <div class="review">
-                <div class="rating" onclick="rate(9, event)">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <form action="processaAvaliacao.php" method="POST" enctype="multipart/form-data">
+                <div class="review">  
+                    
+                    <input type="radio" id="estrela_cinco" name="nota" value="5">
+                    <label for="estrela_cinco"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_quatro" name="nota" value="4">
+                    <label for="estrela_quatro"><i class="fa-solid fa-star"></i></label>
+                
+                    <input type="radio" id="estrela_tres" name="nota" value="3">
+                    <label for="estrela_tres"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_dois" name="nota" value="2">
+                    <label for="estrela_dois"><i class="fa-solid fa-star"></i></label>
+
+                    <input type="radio" id="estrela_um" name="nota" value="1">
+                    <label for="estrela_um"><i class="fa-solid fa-star"></i></label>
+                    <br><br>
                 </div>
-                <textarea placeholder="" class="review-text" style="width: 250px;"></textarea>
-                <button onclick="submitReview(9)">Enviar</button>
-                <div class="submitted-review" id="review-9"></div>
-            </div>
+                <div class="comentario">
+                    <label for="comentario">O que você achou dessa leitura?</label>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50" style="width: 250px;" placeholder="Deixe sua opinião sobre a leitura"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </div>
 
-    <script>
+<!--Script Estrela Direção-->
+<script>
+    const stars = document.querySelectorAll('.review input[type="radio"]');
+    const labels = document.querySelectorAll('.review label');
+  
+    function updateStars(value) {
+      labels.forEach((label, index) => {
+        const starValue = parseInt(stars[index].value);
+        label.querySelector('i').style.color = (starValue <= value) ? 'darkred' : '#ccc';
+      });
+    }
+  
+    stars.forEach((radio, index) => {
+      radio.addEventListener('change', () => {
+        updateStars(parseInt(radio.value));
+      });
+    });
+  
+    // Atualiza visual inicial caso um valor esteja previamente selecionado
+    const selected = document.querySelector('.review input[type="radio"]:checked');
+    if (selected) updateStars(parseInt(selected.value));
+  </script>
+<!--Script Estrela Direção-->
+
+<!--Script mensagens Avaliação-->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const erro = urlParams.get('erro');
+    const sucesso = urlParams.get('sucesso');
+
+    if(erro == 'bd'){
+        alert('Erro ao avaliar. Tente novamente mais tarde.');
+    }else if(sucesso == '1'){
+        alert('Avaliação registrada com sucesso! Verifique seu perfil.');
+    }
+</script>
+
+
+<!--Script mensagens Avaliação-->
+
+
+    <!--<script>
         function rate(index, event) {
             let stars = event.target.parentNode.children;
             let selectedIndex = Array.from(stars).indexOf(event.target);
@@ -267,7 +479,7 @@
             let reviewContainer = document.getElementById(`review-${index}`);
             reviewContainer.innerHTML = `<strong>Nota: ${rating} estrelas</strong><p>${reviewText}</p>`;
         }
-    </script>
+    </script>-->
 
     <footer>
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
