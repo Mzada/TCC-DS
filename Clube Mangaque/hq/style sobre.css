@@ -52,13 +52,13 @@ main {
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 28px;
     line-height: 10px;
     font-family: helvetica;
 }
 
 span {
-    color: red;
+    color: rgb(255, 255, 255);
 }
 
 h2 span {
