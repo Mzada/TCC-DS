@@ -37,7 +37,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 230px;
+    height: 140px;
+    margin-top: 20px;
 }
 
 main {
@@ -69,6 +70,7 @@ p {
     line-height: 20px;
     max-width: 500px;
     font-family: helvetica;
+    font-size: 17px;
 }
 
 .menu-image {
@@ -78,7 +80,7 @@ p {
 }
 
 .menu-image img {
-    height: 300px; 
+    height: 200px; 
 }
 
 .menu {
@@ -118,47 +120,51 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center; 
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
 }
 
 /*região de login e cadastro*/
 .login-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 100vh;
-    padding-right: 50px;
-    width: 30%;
-    margin-left: 0%;
-    margin-top: -40px; 
-    
+    margin-top: -70px;    
 }
 
 .card-login {
     background: #222;
-    padding: 44px;
+    padding: 15px 36px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 100%; 
 }
 
 .card-login h1 {
     text-align: center;
     color: white;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    margin-top: 0;
     text-transform: uppercase;
 }
 
-.card-login h3 {
+/*.card-login h3 {
     text-align: center;
     color: white;
-    font-size: 15px;
-    margin-top: 15px;
-    text-transform: uppercase;
+    font-size: 14px;
+    text-transforcm: uppercase;
+    font-weight: normal;
+    margin: 22px 0 5px;
 }
+*/
+
 .textfield {
     margin-bottom: 20px;
+    position: relative;
 }
 
 .textfield label {
@@ -185,9 +191,9 @@ footer {
 /* Estilos do botões de Login e Cadastro */
 .btn-login, .btn-cadastrar, .btn_voltar {
     text-align: center;
-    background-color: red;
+    background-color: rgb(214, 8, 8);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: 2px solid #444;
     border-radius: 20px;
     cursor: pointer;
@@ -195,19 +201,35 @@ footer {
     font-size: 18px;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 650;
     letter-spacing: 3px;
     box-sizing: border-box;
 }
+
 .btn-cadastrar {
     margin-bottom: 10px;
 }
+
 .btn-login{
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .btn-login:hover, .btn-cadastrar:hover, .btn_voltar:hover {
     background-color: darkred;
+}
+
+#recSenha {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ff0000aa;
+    text-decoration: none;
+}
+
+#recSenha:hover {
+    text-decoration: underline;
 }
 
 
@@ -221,14 +243,33 @@ footer {
     margin: 0 auto;
 }
 
+.register-link {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
 /* Manter essa parte para que o 'sobre' siga o padrão do style ass: vic */
 body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     font-family: Arial, Helvetica, sans-serif !important;
     color: white !important;
 }
+
 .welcome-container {
-    max-width: 75%; 
-    flex-grow: 1;
+    margin: 0;
+    width: 40%;
+    padding-top: 50px
 }
 
 .welcome-container h2 {
@@ -241,14 +282,13 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     max-width: 500px;
     font-family: helvetica;
 } 
+
 .main-cadastro {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    padding: 40px;
-    height: auto;
-    box-sizing: border-box;
-    width: 100%;
+    gap: 60px;
+    padding-top: 100px;
 }
 
 .cadastro-container {
@@ -282,3 +322,28 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     top: 10px;
     text-decoration: none;
 }
+
+/*Div Review Avaliação*/
+.review {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.review input[type="radio"] {
+    display: none;
+}
+
+.review label i.fa-star {
+    color: #ccc;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/*.review input[type="radio"]:checked ~ label i.fa-star,
+.review input[type="radio"]:checked ~ label ~ label i.fa-star {
+    color: darkred;
+}*/
+
+/*Div Review Avaliação*/
