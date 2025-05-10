@@ -1,0 +1,54 @@
+h2 {
+    margin-top: 34px;
+    font-size: 26px;
+    line-height: 10px;
+    font-family: helvetica;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 10px;
+    font-family: helvetica;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    color: white;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+hr {
+    margin-top: 18px;
+}
+
+
+
+h2 span {
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 10px;
+    font-family: helvetica;
+}
+
+.texto-sobre {
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: justify;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+/* Manter essa parte para que o 'sobre' siga o padrão do style ass: vic */
+body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: white !important;
+}

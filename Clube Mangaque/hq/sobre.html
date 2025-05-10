@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
-    <link rel="stylesheet" href="style sobre.css">
+    <link rel="stylesheet" href="style.css"> <!-- Header, fundo e estilos globais -->
+    <link rel="stylesheet" href="sobre.css"> <!-- Estilo específico da tela sobre -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -26,62 +29,64 @@
                 <input type="text" class="search-box" placeholder="Buscar...">
             </div>
         </nav>
-       
+
     </header>
 
     <div style="text-align: center; color: white;">
-        <h2><span>Sobre</span></h2>
+        <h2>SOBRE</h2>
         <br>
         <div class="container">
             <p class="texto-sobre">
-                Na sociedade contemporânea, o movimento geek e a tecnologia caminham lado a lado. Com a popularização da internet, os sites tornaram-se ferramentas essenciais para que as pessoas registrem seus gostos e hobbies, além de preservarem informações por longos períodos. Criar uma plataforma que una esses dois pilares, frequentemente buscados como forma de entretenimento, permite não apenas o registro de conteúdos, mas também a interação entre usuários interessados no universo geek.
+                Na sociedade contemporânea, o movimento geek e a tecnologia caminham lado a lado. Com a popularização da
+                internet, os sites tornaram-se ferramentas essenciais para que as pessoas registrem seus gostos e
+                hobbies, além de preservarem informações por longos períodos. Criar uma plataforma que una esses dois
+                pilares, frequentemente buscados como forma de entretenimento, permite não apenas o registro de
+                conteúdos, mas também a interação entre usuários interessados no universo geek.
             </p>
         </div>
     </div>
 
     <div style="text-align: center; color: white;">
         <br>
-        <h2><span>Equipe de Desenvolvimento</span></h2>
-
-        <div>
-            <h2>Membros</h2>
-            <hr style="width:950px">
+        <h3>Equipe de desenvolvimento</h>
             <div>
-                <div class="container">
-                    <div id="sliderContainer">
-                    <script>
-                        // Criando a estrutura do slider
-                        const sliderContainer = document.createElement("div");
-                        sliderContainer.classList.add("slider");
-                        document.getElementById("sliderContainer").appendChild(sliderContainer);
+                <hr style="width:950px" size="1px" color="#282828">
+                <div>
+                    <div class="container">
+                        <div id="sliderContainer">
+                            <script>
+                                // Criando a estrutura do slider
+                                const sliderContainer = document.createElement("div");
+                                sliderContainer.classList.add("slider");
+                                document.getElementById("sliderContainer").appendChild(sliderContainer);
 
-                        
-                        const slidesDiv = document.createElement("div");
-                        slidesDiv.classList.add("slides");
-                        sliderContainer.appendChild(slidesDiv);
-                        
-                        // Array com os caminhos das imagens
-                        const imagens = [
-                            "imgmembros/Matheus.png",
-                            "imgmembros/Vitoria.png",
-                            "imgmembros/Biancae.png",
-                            "imgmembros/Wesley.png",
-                            "imgmembros/joyce.png"
-                        ];
-                        
-                        imagens.forEach(src => {
-                            let img = document.createElement("img");
-                            img.src = src;
-                            img.classList.add("slide");
-                            slidesDiv.appendChild(img);
-                        });
-                        
-                        // Adicionando estilos via JavaScript
-                        const style = document.createElement("style");
-                        style.innerHTML = `
+
+                                const slidesDiv = document.createElement("div");
+                                slidesDiv.classList.add("slides");
+                                sliderContainer.appendChild(slidesDiv);
+
+                                // Array com os caminhos das imagens
+                                const imagens = [
+                                    "imgmembros/Matheus.png",
+                                    "imgmembros/Vitoria.png",
+                                    "imgmembros/Biancae.png",
+                                    "imgmembros/Wesley.png",
+                                    "imgmembros/joyce.png"
+                                ];
+
+                                imagens.forEach(src => {
+                                    let img = document.createElement("img");
+                                    img.src = src;
+                                    img.classList.add("slide");
+                                    slidesDiv.appendChild(img);
+                                });
+
+                                // Adicionando estilos via JavaScript
+                                const style = document.createElement("style");
+                                style.innerHTML = `
                             .slider {
                                 width: 100%;
-                                max-width: 1000px;
+                                max-width: 720px;
                                 margin: auto;
                                 overflow: hidden;
                                 position: relative;
@@ -112,64 +117,71 @@
                             .prev { left: 0px; }
                             .next { right: 0px; }
                         `;
-                        document.head.appendChild(style);
-                        
-                        // Criando botões de navegação
-                        const prevButton = document.createElement("button");
-                        prevButton.innerHTML = "&#10094;";
-                        prevButton.classList.add("button", "prev");
-                        sliderContainer.appendChild(prevButton);
-                        
-                        const nextButton = document.createElement("button");
-                        nextButton.innerHTML = "&#10095;";
-                        nextButton.classList.add("button", "next");
-                        sliderContainer.appendChild(nextButton);
-                        
-                        // Lógica de mudança de slides
-                        let index = 0;
-                        const totalSlides = imagens.length;
-                        
-                        function showSlide() {
-                            slidesDiv.style.transform = `translateX(-${index * 90}%)`;
-                        }
-                        
-                        prevButton.onclick = () => {
-                            index = (index - 1 + totalSlides) % totalSlides;
-                            showSlide();
-                        };
-                        
-                        nextButton.onclick = () => {
-                            index = (index + 1) % totalSlides;
-                            showSlide();
-                        };
-                        
-                        // Auto-slide a cada 8 segundos
-                        setInterval(() => {
-                            index = (index + 1) % totalSlides;
-                            showSlide();
-                        }, 8000);
-                        </script>
+                                document.head.appendChild(style);
+
+                                // Criando botões de navegação
+                                const prevButton = document.createElement("button");
+                                prevButton.innerHTML = "&#10094;";
+                                prevButton.classList.add("button", "prev");
+                                sliderContainer.appendChild(prevButton);
+
+                                const nextButton = document.createElement("button");
+                                nextButton.innerHTML = "&#10095;";
+                                nextButton.classList.add("button", "next");
+                                sliderContainer.appendChild(nextButton);
+
+                                // Lógica de mudança de slides
+                                let index = 0;
+                                const totalSlides = imagens.length;
+
+                                function showSlide() {
+                                    slidesDiv.style.transform = `translateX(-${index * 90}%)`;
+                                }
+
+                                prevButton.onclick = () => {
+                                    index = (index - 1 + totalSlides) % totalSlides;
+                                    showSlide();
+                                };
+
+                                nextButton.onclick = () => {
+                                    index = (index + 1) % totalSlides;
+                                    showSlide();
+                                };
+
+                                // Auto-slide a cada 8 segundos
+                                setInterval(() => {
+                                    index = (index + 1) % totalSlides;
+                                    showSlide();
+                                }, 8000);
+                            </script>
+                        </div>
                     </div>
                 </div>
-                <footer>
-                    <p style="position:absolute left 30%"> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
-                </footer>
-                <script>
-                    document.getElementById("ano").textContent = new Date().getFullYear();
-                </script>
-                <script>
-                    document.getElementById("search-input").addEventListener("keypress", function(e) {
-                      if (e.key === "Enter") {
-                        const termo = this.value.trim();
-                        if (termo !== "") {
-                          window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
-                        }
-                      }
-                    });
-                  </script>
-                </div>
             </div>
-        </div>
     </div>
+    </div>
+
+    <footer>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+    </footer>
+
+    <!--Scrpit que atualiza o ano automaticamente-->
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
+
+
+    <script>
+        document.getElementById("search-input").addEventListener("keypress", function(e) {
+          if (e.key === "Enter") {
+            const termo = this.value.trim();
+            if (termo !== "") {
+              window.location.href = "resultados.html?q=" + encodeURIComponent(termo);
+            }
+          }
+        });
+      </script>
+
 </body>
+
 </html>
