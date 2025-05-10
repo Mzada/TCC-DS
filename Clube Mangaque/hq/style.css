@@ -44,11 +44,9 @@ nav {
 main {
     display: flex;
     flex-direction: row;
-    margin-top: 0;
     justify-content: center; 
     align-items: center; 
     padding: 20px;
-    margin-top: 0;
 
 }
 
