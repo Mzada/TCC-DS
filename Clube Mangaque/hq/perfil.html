@@ -112,15 +112,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>One Piece</td>
-                    <td>Eiichiro Oda</td>
-                    <td>4/5⭐</td>
-                    <td>
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-excluir">Excluir</button>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -193,6 +184,48 @@
         alert('Cadastro atualizado com sucesso!');
     }
 </script>
+<!--Script mensagens de Atualização de perfil-->
+
+<!--Script puxa as avaliações-->
+<script>
+    fetch('getAvaliacoes.php')
+        .then(res => res.json())
+        .then(data => {
+            console.log("Dados recebidos:", data.avaliacoes);
+
+            const tbody = document.querySelector(".tabela-mangas tbody");
+            if (!tbody) {
+                console.error("Erro: Elemento tbody não encontrado!");
+                return;
+            }
+
+            tbody.innerHTML = '';
+
+            if (data.avaliacoes.length === 0) {
+                console.log(`Carregadas ${data.avaliacoes.length} avaliações`);
+                tbody.innerHTML = '<tr><td colspan="4">Nenhuma avaliação encontrada.</td></tr>';
+                return;
+            }
+
+            data.avaliacoes.forEach(avaliacao => {
+                console.log("Adicionando à tabela:", avaliacao);
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${avaliacao.titulo}</td>
+                    <td>${avaliacao.autor}</td>
+                    <td>${avaliacao.nota}/5⭐</td>
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-excluir">Excluir</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        })
+        .catch(erro => console.error("Erro ao carregar avaliações:", erro));
+</script>
+<!--Script puxa as avaliações-->
+
 
 
 </body>
