@@ -16,7 +16,7 @@ session_start();
 
     $idUsuario = $_SESSION['IdUsuario'];
     
-    $sql = "SELECT a.nota, o.nome AS titulo, o.autor
+    $sql = "SELECT o.nome, o.autor, o.capa, o.ano_publicacao
             FROM avaliacoes a
             JOIN obras o ON a.idObra = o.idObra
             WHERE a.IdUsuario = ?
@@ -27,9 +27,9 @@ session_start();
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $avaliacoes = [];
+    $obraslidas = [];
     while ($row = $result->fetch_assoc()){
-        $avaliacoes[] = $row;
+        $obraslidas[] = $row;
     }
 
     /*foreach ($avaliacoes as &$avaliacao) {
@@ -40,7 +40,5 @@ session_start();
     }
 }*/
 
-    echo json_encode(["avaliacoes" => $avaliacoes]);
-    exit();
+    echo json_encode($obraslidas);
 ?>
-

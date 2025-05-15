@@ -37,7 +37,9 @@
             </label>
             <div class="dados-usuario">
                 <h2 id="apelidoDisplay"></h2>
+                <br>
                 <p id="emailDisplay"></p>
+                <br>
                 <!--<p>Visitas: <span id="contagem-visitas">120</span></p> Acredito que não seja necessário nomomento-->
                 <!--<p>Likes recebidos: <span id="contagem-likes">45</span></p> Acredito que não seja necessário no momento-->
                 <!--<p>Ver favoritos <span id="contagem-likes">❤</span></p> Acredito que não seja necessário nomomento-->
@@ -61,42 +63,7 @@
     <section class="obras-lidas-section">
         <h2>Obras lidas</h2>
         <div class="lista-obras">
-            <div class="obra-card" data-lida-em="2025-04-25">
-                <div class="info-obra">
-                    <h3>Nana <span class="ano-publicacao">(2000-2009)</span></h3>
-                    <p> Ai Yazawa</p>
-                    <button class="btn-remover">Remover</button>
-                </div>
-                <img src="images/capa-nana.jpg" alt="Capa de Nana" class="capa-manga">
-            </div>
-
-            <div class="obra-card" data-lida-em="2025-03-20">
-                <div class="info-obra">
-                    <h3>Solanin <span class="ano-publicacao">(2005-2006)</span></h3>
-                    <p> Inio Asano</p>
-                    <button class="btn-remover">Remover</button>
-                </div>
-                <img src="images/capa-solanin.jpg" alt="Capa de Solanin" class="capa-manga">
-            </div>
             
-            <div class="obra-card" data-lida-em="2025-02-12">
-                <div class="info-obra">
-                    <h3>Akira <span class="ano-publicacao">(1982-1990)</span></h3>
-                    <p>Katsuhiro Otomo</p>
-                    <button class="btn-remover">Remover</button>
-                </div>
-                <img src="images/capa-akira.png" alt="Capa de Akira" class="capa-manga">
-            </div>
-
-            <div class="obra-card" data-lida-em="2025-01-15">
-                <div class="info-obra">
-                    <h3>Death Note <span class="ano-publicacao">(2003-2006)</span></h3>
-                    <p>Tsugumi Ohba e Takeshi Obata</p>
-                    <button class="btn-remover">Remover</button>
-                </div>
-                <img src="images/capa-dn.jpg" alt="Capa de Death Note" class="capa-manga">
-            </div>
-
         </div>           
     </section>
     
@@ -115,9 +82,8 @@
             </tbody>
         </table>
     </section>
-    
+</main>    
     <!--- footer vázio para manter o Copyright quase centralizado. O principal está na grid do meio agora-->
-<footer></footer>
 <footer>
     <p>&copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
 </footer>
@@ -187,7 +153,7 @@
 </script>
 <!--Script mensagens de Atualização de perfil-->
 
-<!--Script puxa as avaliações-->
+<!--Script puxar as avaliações-->
 <script>
     fetch('getAvaliacoes.php')
         .then(res => res.json())
@@ -227,7 +193,40 @@
 </script>
 <!--Script puxa as avaliações-->
 
+<!--Script Puxa Obras Lidas-->
+<script>
+    fetch('getObrasLidas.php')
+    .then(res => res.json())
+    .then(obraslidas => {
+        const container = document.querySelector('.lista-obras');
+        container.innerHTML = ''; // limpa conteúdo anterior
 
+        if (obraslidas.length === 0) {
+        container.innerHTML = '<p>Nenhuma obra lida encontrada.</p>';
+        return;
+        }
 
+        obraslidas.forEach(obra => {
+        const div = document.createElement('div');
+        div.className = 'obra-card';
+
+        div.innerHTML = `
+            <div class="info-obra">
+            <h4>${obra.nome} <span class="ano-publicacao">(${obra.ano_publicacao})</span></h4>
+            <p>${obra.autor}</p>
+            <button class="btn-remover">Remover</button>
+            </div>
+            <img src="${obra.capa}" alt="Capa de ${obra.nome}" class="capa-manga">
+        `;
+
+        container.appendChild(div);
+        });
+    })
+    .catch(err => {
+        console.error('Erro ao carregar obras lidas:', err);
+    });
+</script>
+
+<!--Script Puxa Obras Lidas-->
 </body>
 </html>
