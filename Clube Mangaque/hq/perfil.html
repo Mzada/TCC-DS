@@ -60,20 +60,24 @@
         </form>
     </section>
 
+    <!--Obras lidas
     <section class="obras-lidas-section">
         <h2>Obras lidas</h2>
         <div class="lista-obras">
             
         </div>           
-    </section>
+    </section>-->
     
     <section class="lista-mangas">
         <h2>Minhas avaliações</h2>
         <table class="tabela-mangas">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Título</th>
+                    <th>Ano</th>
                     <th>Autor</th>
+                    <th>Comentário</th>
                     <th>Nota</th>
                     <th>Ações</th>
                 </tr>
@@ -178,12 +182,17 @@
                 console.log("Adicionando à tabela:", avaliacao);
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
+                    <td><img src="${avaliacao.capa}" alt="Capa de ${avaliacao.nome}" class="capa-manga"</td>
                     <td>${avaliacao.titulo}</td>
+                    <td>${avaliacao.ano}</td>
                     <td>${avaliacao.autor}</td>
+                    <td>${avaliacao.comentario}</td>
                     <td>${avaliacao.nota}/5⭐</td>
                     <td>
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-excluir">Excluir</button>
+                        <div class="btns-acao">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -193,7 +202,7 @@
 </script>
 <!--Script puxa as avaliações-->
 
-<!--Script Puxa Obras Lidas-->
+<!--Script Puxa Obras Lidas
 <script>
     fetch('getObrasLidas.php')
     .then(res => res.json())
@@ -214,7 +223,7 @@
             <div class="info-obra">
             <h4>${obra.nome} <span class="ano-publicacao">(${obra.ano_publicacao})</span></h4>
             <p>${obra.autor}</p>
-            <button class="btn-remover">Remover</button>
+            <p><span>Resenha: </span>"${obra.comentario}"</p>
             </div>
             <img src="${obra.capa}" alt="Capa de ${obra.nome}" class="capa-manga">
         `;
@@ -227,6 +236,6 @@
     });
 </script>
 
-<!--Script Puxa Obras Lidas-->
+Script Puxa Obras Lidas-->
 </body>
 </html>

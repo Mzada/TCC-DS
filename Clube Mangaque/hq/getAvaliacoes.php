@@ -16,7 +16,7 @@ session_start();
 
     $idUsuario = $_SESSION['IdUsuario'];
     
-    $sql = "SELECT a.nota, o.nome AS titulo, o.autor
+    $sql = "SELECT a.nota, o.nome AS titulo, o.autor, o.capa, o.ano_publicacao, a.comentario
             FROM avaliacoes a
             JOIN obras o ON a.idObra = o.idObra
             WHERE a.IdUsuario = ?
