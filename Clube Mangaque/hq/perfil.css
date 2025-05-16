@@ -4,19 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Divisão das colunas */
-.perfil-wrapper {
-    display: grid;
-    /*grid-template-columns: 1fr 2fr 2fr; Voltar caso não dê certo*/
-    grid-template-columns: 1fr 1fr 4fr;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1500px;
-    margin: 0 auto;
-    align-items: start; /* Alinha os itens ao topo, respeitando a altura de cada um */
-}
-
-.perfil-wrapper .perfil {
+.perfil {
     align-self: start;
 }
 
@@ -25,10 +13,10 @@
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin-right: 10px;
 }
 
 .perfil-info {
-    grid-column: 1 / 2;
     max-width: 100%; 
     overflow: hidden;
     display: flex;
@@ -36,16 +24,15 @@
     justify-content: space-between;
 }
 
-/*.obras-lidas-section {
-    grid-column: 2 / 3;
+.obras-lidas-section {
     overflow: hidden;
     display: flex;
     flex-direction: column;
 } voltar caso não de certo*/
 
 .lista-mangas {
-    grid-column: 3 / 4;
     overflow: hidden;
+    position: relative;
 }
 
 .perfil-header {

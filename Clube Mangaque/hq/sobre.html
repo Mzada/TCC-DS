@@ -100,35 +100,12 @@
                         
                             .slide {
                                 width: 90%;
-                            }
-                        
-                            .button {
-                                position: absolute;
-                                top: 50%;
-                                transform: translateY(-50%);
-                                background-color: red;
-                                color: white;
-                                border: none;
-                                cursor: pointer;
-                                padding: 10px;
-                                font-size: 20px;
-                            }
-                        
-                            .prev { left: 0px; }
-                            .next { right: 0px; }
-                        `;
+                            }`;
                                 document.head.appendChild(style);
 
                                 // Criando botões de navegação
                                 const prevButton = document.createElement("button");
-                                prevButton.innerHTML = "&#10094;";
-                                prevButton.classList.add("button", "prev");
-                                sliderContainer.appendChild(prevButton);
-
                                 const nextButton = document.createElement("button");
-                                nextButton.innerHTML = "&#10095;";
-                                nextButton.classList.add("button", "next");
-                                sliderContainer.appendChild(nextButton);
 
                                 // Lógica de mudança de slides
                                 let index = 0;
