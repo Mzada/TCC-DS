@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+main{
+    align-items: flex-start;
+}
+
 .perfil {
     align-self: start;
 }
@@ -17,22 +21,24 @@
 }
 
 .perfil-info {
-    max-width: 100%; 
+    flex: 0 0 300px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.obras-lidas-section {
+/*.obras-lidas-section {
     overflow: hidden;
     display: flex;
     flex-direction: column;
 } voltar caso não de certo*/
 
 .lista-mangas {
+    flex: 1;
     overflow: hidden;
     position: relative;
+    margin: 0;
 }
 
 .perfil-header {
@@ -152,14 +158,14 @@
     color: white;
 }*/
 
-.lista-obras {
+/*.lista-obras {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    max-height: 520px; /* Defina a altura máxima para a lista */
-    overflow-y: auto;  /* Habilita a rolagem vertical */
-    padding-right: 10px; /* Ajuste para não sobrepor a barra de rolagem */
-}
+    max-height: 520px; -Defina a altura máxima para a lista 
+    overflow-y: auto;  -Habilita a rolagem vertical 
+    padding-right: 10px; -Ajuste para não sobrepor a barra de rolagem 
+}*/
 
 /* Personalização da barra de rolagem */
 .lista-obras::-webkit-scrollbar {
@@ -222,7 +228,7 @@
 .capa-manga {
     /*width: 20%; Voltar caso não de certo*/
     width: 100px; /* Largura fixa para a capa */
-    height: 140px; 
+    height: 120px; 
     object-fit: cover; 
     border-radius: 5px;
     filter: grayscale(100%); /* Imagem em preto e branco por padrão */

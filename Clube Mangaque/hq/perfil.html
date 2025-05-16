@@ -61,12 +61,12 @@
     </section>
 
     <!--Obras lidas
-   <!--- <section class="obras-lidas-section">
+    <section class="obras-lidas-section">
         <h2>Obras lidas</h2>
         <div class="lista-obras">
             
         </div>           
-    </section> --->-->
+    </section> --->
     
     <section class="lista-mangas">
         <h2>Minhas avaliações</h2>
@@ -184,7 +184,7 @@
                 tr.innerHTML = `
                     <td><img src="${avaliacao.capa}" alt="Capa de ${avaliacao.nome}" class="capa-manga"</td>
                     <td>${avaliacao.titulo}</td>
-                    <td>${avaliacao.ano}</td>
+                    <td>${avaliacao.ano_publicacao}</td>
                     <td>${avaliacao.autor}</td>
                     <td>${avaliacao.comentario}</td>
                     <td>${avaliacao.nota}/5⭐</td>
@@ -195,6 +195,11 @@
                         </div>
                     </td>
                 `;
+
+                //Evento dos botões
+                tr.querySelector("btn-editar").addEventListener("click", () => editarLinha(tr, avaliacao));
+                tr.querySelector("btn-excluir").addEventListener("click", () => excluirAvaliacao(avaliacao.id));
+
                 tbody.appendChild(tr);
             });
         })
