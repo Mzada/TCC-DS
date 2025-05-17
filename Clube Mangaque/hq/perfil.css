@@ -375,6 +375,56 @@ main{
     display: flex;
 }
 
+/*Text area editar comentário*/
+textarea[name="comentarioEditar"]{
+    width: 100%;
+    background-color: #464545;
+    color: white;
+    border: 1px solid #464545;
+    border-radius: 5px;
+    padding: 6px 8px;
+    font-size: 14px;
+    resize: vertical;       /* permite redimensionar verticalmente */
+    box-sizing: border-box;
+}
+
+/* Select da nota */
+select[name="notaEditar"] {
+    background-color: #464545;
+    color: #eee;
+    border: 1px solid #464545;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+}
+
+/*Botões Salvar e Cancelar Edição*/
+.btns-editar{
+    display: flex;
+}
+
+.btn-salvarE,
+.btn-cancelarE {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 0 2px;
+    font-weight: bold;
+} 
+
+.btn-salvarE{
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-cancelarE{
+    background-color: #6a6969cb;
+}
+
 /* Barra de rolagem */
 .tabela-scroll {
     max-height: 520px;

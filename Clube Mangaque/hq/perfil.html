@@ -182,7 +182,7 @@
                 console.log("Adicionando à tabela:", avaliacao);
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td><img src="${avaliacao.capa}" alt="Capa de ${avaliacao.nome}" class="capa-manga"</td>
+                    <td><img src="${avaliacao.capa}" alt="Capa de ${avaliacao.nome}" class="capa-manga"></td>
                     <td>${avaliacao.titulo}</td>
                     <td>${avaliacao.ano_publicacao}</td>
                     <td>${avaliacao.autor}</td>
@@ -197,13 +197,82 @@
                 `;
 
                 //Evento dos botões
-                tr.querySelector("btn-editar").addEventListener("click", () => editarLinha(tr, avaliacao));
-                tr.querySelector("btn-excluir").addEventListener("click", () => excluirAvaliacao(avaliacao.id));
+                tr.querySelector(".btn-editar").addEventListener("click", () => editarLinha(tr, avaliacao));
+                tr.querySelector(".btn-excluir").addEventListener("click", () => excluirAvaliacao(avaliacao.idavaliacao));
 
                 tbody.appendChild(tr);
             });
         })
         .catch(erro => console.error("Erro ao carregar avaliações:", erro));
+
+        //Função de editar avaliação
+        function editarLinha(tr, avaliacao){
+            tr.innerHTML = `
+                <td><img src="${avaliacao.capa}" alt="Capa de ${avaliacao.nome}" class="capa-manga"></td>
+                <td>${avaliacao.titulo}</td>
+                <td>${avaliacao.ano_publicacao}</td>
+                <td>${avaliacao.autor}</td>
+                <td><textarea name="comentarioEditar" row="3">${avaliacao.comentario || ''}</textarea></td>
+                <td>
+                    <select name="notaEditar">
+                        ${[1, 2, 3, 4, 5].map(n => `<option value="${n}" ${n==avaliacao.nota ? 'selected' : ''}>${n}</option>`).join('')}
+                    </select>/5⭐
+                </td>
+                <td>
+                    <div class="btns-editar">
+                        <button class="btn-salvarE" onclick="salvarEdicao(${avaliacao.idavaliacao}, this)">Salvar</button>
+                        <button class="btn-cancelarE" onclick="cancelarEdicao()">Cancelar</button>
+                    </div>    
+                </td>
+            `;
+        }
+
+        //Função Salvar edição
+        function salvarEdicao(idavaliacao, btn){
+            const tr = btn.closest("tr");
+            const comentario = tr.querySelector('textarea[name="comentarioEditar"]').value;
+            const nota = tr.querySelector('select[name="notaEditar"]').value;
+
+            fetch("editarAvaliacao.php", {
+                method: "POST",
+                headers: {"Content-Type":"application/json"},
+                body: JSON.stringify({idavaliacao, comentarioEditar: comentario, notaEditar: nota})
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                if(res.sucesso){
+                    alert("Avaliação atualizada!");
+                    location.reload();
+                }else{
+                    alert("Erro ao atualizar.");
+                }
+            });
+        }
+
+        //Função cancelar edição
+        function cancelarEdicao(){
+            location.reload();
+        }
+        
+        //Função excluir avaliação
+        function excluirAvaliacao(idavaliacao){
+            if(!confirm("Tem certeza que deseja excluir esta avaliação?")) return;
+            
+            fetch("excluirAvaliacao.php", {
+                method:"POST",
+                headers: {"Content-Type":"application/json"},
+                body: JSON.stringify({idavaliacao})
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                if(res.sucesso){
+                    alert("Avaliação excluída.")
+                    location.reload();
+                }else{
+                    alert("Erro ao excluir.")
+                }
+            });
+        }
 </script>
 <!--Script puxa as avaliações-->
 
