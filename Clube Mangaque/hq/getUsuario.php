@@ -12,7 +12,7 @@
     //$_SESSION['IdUsuario'] = 6;
 
     $idUsuario = $_SESSION['IdUsuario'];
-    $stmt = $conn->prepare("SELECT nome_completo, apelido, email FROM usuarios WHERE IdUsuario = ?");
+    $stmt = $conn->prepare("SELECT nome_completo, apelido, email, fotoPerfil FROM usuarios WHERE IdUsuario = ?");
     $stmt->bind_param("i", $idUsuario);
     $stmt->execute();
     $result = $stmt->get_result();

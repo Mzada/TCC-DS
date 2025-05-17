@@ -33,7 +33,7 @@
     <section class="perfil-info">
         <div class="perfil-header">
             <label for="foto">
-                <img src="./img/avatar.jpg" alt="Foto de Perfil" class="foto-perfil">
+                <img src="" alt="Foto de Perfil" class="foto-perfil">
             </label>
             <div class="dados-usuario">
                 <h2 id="apelidoDisplay"></h2>
@@ -46,8 +46,8 @@
                 <button class="btn-editar-perfil">Editar Perfil</button>
             </div>
         </div>
-        <form action="atualizarPerfil.php" method="POST" class="form-editar" style="display: none;">
-            <input type="file" id="foto" accept="image/*">
+        <form action="atualizarPerfil.php" method="POST" enctype="multipart/form-data" class="form-editar" style="display: none;">
+            <input type="file" id="foto" name="fotoPerfil" accept="image/*">
             <label for="nome_completo">Nome Completo</label>
             <input type="text" id="nome_completo" name="nome_completo" placeholder="Digite seu nome e sobrenome" required>
             <label for="apelidoEditar">Apelido/Nome Social</label>
@@ -120,24 +120,27 @@
             document.getElementById('apelidoDisplay').textContent = data.apelido;
             document.getElementById('emailDisplay').textContent = data.email;
 
+            //Atualiza a foto do perfil
+            const imgPerfil = document.querySelector('.foto-perfil');
+            if (data.fotoPerfil && data.fotoPerfil !== "") {
+                imgPerfil.src = data.fotoPerfil;
+            } else {
+                imgPerfil.src = "./img/perfis/avatar.jpg"; // fallback
+            }
+
             //Dados carregados somente na ação do botão
             document.querySelector(".btn-editar-perfil").addEventListener("click", function() {
 
             document.querySelector(".form-editar").style.display = "block";
-
+            
 
             //Puxa os dados para o Formulario de Edição
             document.getElementById('nome_completo').value = data.nome_completo;
             document.getElementById('apelidoEditar').value = data.apelido;
             document.getElementById('emailEditar').value = data.email;
-
-            //document.getElementById('nome_completo').value = data.nome_completo;
-            //document.getElementById('apelido').setAttribute('value', data.apelido);
-            //document.getElementById('email').setAttribute('value', data.email);
-
+            
+            
             });
-            //document.getElementById('apelido').textContent = data.apelido;
-            //document.getElementById('email').textContent = data.email;
 
         })
         .catch(err => console.error('Erro:', err));
