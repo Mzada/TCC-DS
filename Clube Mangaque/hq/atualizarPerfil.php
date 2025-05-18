@@ -21,7 +21,7 @@
 
         //cria a pasta se não existir
         if(!is_dir('img/perfis')){
-            mkdir('img/perfis', 0777, ture);
+            mkdir('img/perfis', 0777, true);
         }
 
         if(move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], $destino)){
