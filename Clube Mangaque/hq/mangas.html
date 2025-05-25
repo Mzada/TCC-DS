@@ -159,7 +159,7 @@
                 <div class="review">  
                     <input type="hidden" name="idObra" value="12">
 
-                    <input type="radio" id="estrela_60" name="nota" value="5"> <!--Se der tempo mudar para o mesmo sequencial da página HQs-->
+                    <input type="radio" id="estrela_60" name="nota" value="5">
                     <label for="estrela_60"><i class="fa-solid fa-star"></i></label>
 
                     <input type="radio" id="estrela_59" name="nota" value="4">
@@ -431,6 +431,14 @@
             </form>
         </div>
     </div>
+   <footer>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
+    </footer>
+    
+<!--Script atualiza o ano automaticamente-->
+<script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
 
 <!--Script Estrela Direção-->
 <script>
@@ -478,33 +486,6 @@
 
 </script>
 <!--Script mensagens Avaliação-->
-
-<!--<script>
-        function rate(index, event) {
-            let stars = event.target.parentNode.children;
-            let selectedIndex = Array.from(stars).indexOf(event.target);
-            Array.from(stars).forEach((star, i) => {
-                star.classList.toggle("selected", i <= selectedIndex);
-            });
-            document.querySelector(`.mangas[data-index='${index}']`).setAttribute("data-rating", selectedIndex + 1);
-        }
-
-        function submitReview(index) {
-            let reviewText = document.querySelector(`.mangas[data-index='${index}'] .review-text`).value;
-            let rating = document.querySelector(`.mangas[data-index='${index}']`).getAttribute("data-rating") || "0";
-            let reviewContainer = document.getElementById(`review-${index}`);
-            reviewContainer.innerHTML = `<strong>Nota: ${rating} estrelas</strong><p>${reviewText}</p>`;
-        }
-    </script>
--->
-    <footer>
-        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
-    </footer>
-<!--Script atualiza o ano automaticamente-->
-    <script>
-        document.getElementById("ano").textContent = new Date().getFullYear();
-    </script>
-
     <script>
         document.querySelector(".search-box").addEventListener("keypress", function(e) {
             if (e.key === "Enter") {

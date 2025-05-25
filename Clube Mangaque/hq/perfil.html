@@ -40,9 +40,6 @@
                 <br>
                 <p id="emailDisplay"></p>
                 <br>
-                <!--<p>Visitas: <span id="contagem-visitas">120</span></p> Acredito que não seja necessário nomomento-->
-                <!--<p>Likes recebidos: <span id="contagem-likes">45</span></p> Acredito que não seja necessário no momento-->
-                <!--<p>Ver favoritos <span id="contagem-likes">❤</span></p> Acredito que não seja necessário nomomento-->
                 <button class="btn-editar-perfil">Editar Perfil</button>
             </div>
         </div>
@@ -54,19 +51,9 @@
             <input type="text" id="apelidoEditar" name="apelido" placeholder="Como deseja ser chamado?" required>
             <label for="emailEditar">E-mail</label>
             <input type="text" id="emailEditar" name="email" placeholder="Digite seu e-mail" required>
-            <!--<input type="date" id="nasc" placeholder="Data de Nascimento" required> Acredito que não seja necessário na edição de perfil-->
-            <!--<input type="text" id="cidade" placeholder="Cidade" required> Essa informação não existe no cadastro-->
             <button type="submit" class="btn-salvar">Salvar</button>
         </form>
     </section>
-
-    <!--Obras lidas
-    <section class="obras-lidas-section">
-        <h2>Obras lidas</h2>
-        <div class="lista-obras">
-            
-        </div>           
-    </section> --->
     
     <section class="lista-mangas">
         <h2>Minhas avaliações</h2>
@@ -177,7 +164,7 @@
 
             if (data.avaliacoes.length === 0) {
                 console.log(`Carregadas ${data.avaliacoes.length} avaliações`);
-                tbody.innerHTML = '<tr><td colspan="4">Nenhuma avaliação encontrada.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7">Nenhuma avaliação encontrada.</td></tr>';
                 return;
             }
 
@@ -279,40 +266,5 @@
 </script>
 <!--Script puxa as avaliações-->
 
-<!--Script Puxa Obras Lidas
-<script>
-    fetch('getObrasLidas.php')
-    .then(res => res.json())
-    .then(obraslidas => {
-        const container = document.querySelector('.lista-obras');
-        container.innerHTML = ''; // limpa conteúdo anterior
-
-        if (obraslidas.length === 0) {
-        container.innerHTML = '<p>Nenhuma obra lida encontrada.</p>';
-        return;
-        }
-
-        obraslidas.forEach(obra => {
-        const div = document.createElement('div');
-        div.className = 'obra-card';
-
-        div.innerHTML = `
-            <div class="info-obra">
-            <h4>${obra.nome} <span class="ano-publicacao">(${obra.ano_publicacao})</span></h4>
-            <p>${obra.autor}</p>
-            <p><span>Resenha: </span>"${obra.comentario}"</p>
-            </div>
-            <img src="${obra.capa}" alt="Capa de ${obra.nome}" class="capa-manga">
-        `;
-
-        container.appendChild(div);
-        });
-    })
-    .catch(err => {
-        console.error('Erro ao carregar obras lidas:', err);
-    });
-</script>
-
-Script Puxa Obras Lidas-->
 </body>
 </html>

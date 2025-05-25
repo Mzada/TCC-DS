@@ -1,78 +1,68 @@
 <?php
+    session_start();
+    require_once 'conexaoBD.php';
 
-$host = "localhost";
-$usuario = "root";
-$senha = "usbw";
-$banco = "mangaque"; 
+    //Coletar dados do formulário
+    $nome = $_POST['nomeCompleto'];
+    $apelido = $_POST['apelido'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $confirmarSenha = $_POST['confirmarSenha'];
+    $dataNascimento = $_POST['dataNascimento'];
 
-//Conexão com o banco de dados
-    $conn = mysqli_connect($host, $usuario, $senha, $banco);
-    
-    if (!$conn) {
-        die("Falha na conexão: " . mysqli_connect_error());
+    //Verifica a idade mínima de 16 anos
+    $hoje = new DateTime();
+    $nascimento = new DateTime($dataNascimento);
+    $idade = $hoje->diff($nascimento)->y;
+
+    if ($idade < 16) {
+        header("Location: cadastro.html?erro=idade"); // Redireciona a mensagem de erro para a página de cadastro
+        exit();
     }
 
-//Coletar dados do formulário
-$nome = $_POST['nomeCompleto'];
-$apelido = $_POST['apelido'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$confirmarSenha = $_POST['confirmarSenha'];
-$dataNascimento = $_POST['dataNascimento'];
+    //Verifica se as senhas são iguais
+    if ($senha !== $confirmarSenha) {
+        header("Location: cadastro.html?erro=senha"); // Redireciona a mensagem de erro para a página de cadastro
+        exit();
+    }
 
-//Verifica a idade mínima de 16 anos
-$hoje = new DateTime();
-$nascimento = new DateTime($dataNascimento);
-$idade = $hoje->diff($nascimento)->y;
+    //Criptografar a senha
+    $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
 
-if ($idade < 16) {
-    header("Location: cadastro.html?erro=idade"); // Redireciona a mensagem de erro para a página de cadastro
-    exit();
-}
+    //Verifica se o email já está cadastrado
+    $sql_verifica = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt_verifica = mysqli_prepare($conn, $sql_verifica);
+    mysqli_stmt_bind_param($stmt_verifica, "s", $email);
+    mysqli_stmt_execute($stmt_verifica);
+    mysqli_stmt_store_result($stmt_verifica);
 
-//Verifica se as senhas são iguais
-if ($senha !== $confirmarSenha) {
-    header("Location: cadastro.html?erro=senha"); // Redireciona a mensagem de erro para a página de cadastro
-    exit();
-}
+    if (mysqli_stmt_num_rows($stmt_verifica) > 0) {
+        header("Location: cadastro.html?erro=email"); // Redireciona a mensagem de erro para a página de cadastro
+        exit();
+    }
 
-//Criptografar a senha
-$senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+    mysqli_stmt_close($stmt_verifica);
 
-//Verifica se o email já está cadastrado
-$sql_verifica = "SELECT * FROM usuarios WHERE email = ?";
-$stmt_verifica = mysqli_prepare($conn, $sql_verifica);
-mysqli_stmt_bind_param($stmt_verifica, "s", $email);
-mysqli_stmt_execute($stmt_verifica);
-mysqli_stmt_store_result($stmt_verifica);
+    //Inserir os dados no banco de dados
+    $sql = "INSERT INTO usuarios (nome_completo, apelido, email, senha, data_nascimento) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
 
-if (mysqli_stmt_num_rows($stmt_verifica) > 0) {
-    header("Location: cadastro.html?erro=email"); // Redireciona a mensagem de erro para a página de cadastro
-    exit();
-}
-
-mysqli_stmt_close($stmt_verifica);
-
-//Inserir os dados no banco de dados
-$sql = "INSERT INTO usuarios (nome_completo, apelido, email, senha, data_nascimento) VALUES (?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-
-if ($stmt === false) {
-    die("Erro na preparação da consulta: " . $conn->error);
-}
+    if ($stmt === false) {
+        die("Erro na preparação da consulta: " . $conn->error);
+    }
 
 
-$stmt->bind_param("sssss", $nome, $apelido, $email, $senhaCriptografada, $dataNascimento);
+    $stmt->bind_param("sssss", $nome, $apelido, $email, $senhaCriptografada, $dataNascimento);
 
-if($stmt->execute()){
-    header("Location: cadastro.html?sucesso=1"); // Redireciona para a página de login com sucesso
-    exit();
-} else {
-    header("Location: cadastro.html?erro=bd"); // Redireciona a mensagem de erro para a página de cadastro
-    exit();
-}
+    if($stmt->execute()){
+        header("Location: cadastro.html?sucesso=1"); // Redireciona para a página de login com sucesso
+        exit();
+    } else {
+        header("Location: cadastro.html?erro=bd"); // Redireciona a mensagem de erro para a página de cadastro
+        exit();
+    }
 
-$stmt->close();
-$conn->close();
+    $stmt->close();
+    $conn->close();
 
 ?>

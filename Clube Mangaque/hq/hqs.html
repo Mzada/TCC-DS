@@ -492,24 +492,6 @@
 </script>
 <!--Script mensagens Avaliação-->
 
-
-    <!--<script>
-        function rate(index, event) {
-            let stars = event.target.parentNode.children;
-            let selectedIndex = Array.from(stars).indexOf(event.target);
-            Array.from(stars).forEach((star, i) => {
-                star.classList.toggle("selected", i <= selectedIndex);
-            });
-            document.querySelector(`.hq[data-index='${index}']`).setAttribute("data-rating", selectedIndex + 1);
-        }
-        function submitReview(index) {
-            let reviewText = document.querySelector(`.hq[data-index='${index}'] .review-text`).value;
-            let rating = document.querySelector(`.hq[data-index='${index}']`).getAttribute("data-rating") || "0";
-            let reviewContainer = document.getElementById(`review-${index}`);
-            reviewContainer.innerHTML = `<strong>Nota: ${rating} estrelas</strong><p>${reviewText}</p>`;
-        }
-    </script>-->
-
 <!--Script atualiza o ano automaticamente-->
     <footer>
         <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
