@@ -150,16 +150,6 @@ footer {
     text-transform: uppercase;
 }
 
-/*.card-login h3 {
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    text-transforcm: uppercase;
-    font-weight: normal;
-    margin: 22px 0 5px;
-}
-*/
-
 .textfield {
     margin-bottom: 20px;
     position: relative;
@@ -338,10 +328,3 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, ul {
     cursor: pointer;
     transition: color 0.2s;
 }
-
-/*.review input[type="radio"]:checked ~ label i.fa-star,
-.review input[type="radio"]:checked ~ label ~ label i.fa-star {
-    color: darkred;
-}*/
-
-/*Div Review Avaliação*/
