@@ -1,4 +1,4 @@
-# TCC DS
+# Mangáquê: Clube de Leitura Online de Mangás e HQs.
 
 TCC do Curso Técnico em Desenvolvimento de Sistemas pelo Centro Paula Souza (modalidade EAD).
 
